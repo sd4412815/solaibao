@@ -1,0 +1,16 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="block box" style="border:0px; background:0px;">
+<div class="blank" style="border:0px; "></div>
+<div id="ur_here">
+<!-- {if $search_best gt 0} -->
+        {$lang.ur_here} <a href="supplier.php?suppId={$smarty.session.suppId}">店铺首页></a> 精品推荐
+      <!-- {elseif $search_new gt 0} -->
+         {$lang.ur_here} <a href="supplier.php?suppId={$smarty.session.suppId}">店铺首页></a> 新品上市
+      <!-- {elseif $search_hot gt 0} -->
+         {$lang.ur_here} <a href="supplier.php?suppId={$smarty.session.suppId}">店铺首页></a> 热销商品
+      <!-- {else $search_hot gt 0 && $search_hot eq 70000 } -->
+         {$lang.ur_here} <a href="supplier.php?suppId={$smarty.session.suppId}">店铺首页></a> 全部商品
+      <!-- {/if} -->
+</div>
+</div>
+<div class="blank"></div>

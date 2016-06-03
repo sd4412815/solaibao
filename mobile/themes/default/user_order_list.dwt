@@ -1,0 +1,99 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<style>
+
+	.act:active{ text-decoration:underline; font-weight:bold;}
+</style> 
+<section class="content" style="padding: 0;">
+{if $show_asynclist}
+<div class="ect-pro-list user-order" style="border-bottom:none;">
+    <ul id="J_ItemList">
+       <li class="single_item"></li>
+       <a href="javascript:;" style="text-align:center" class="get_more"></a>
+    </ul>
+</div>
+{else}
+
+    {foreach name=orders_list from=$orders_list item=orders}
+
+        <div class="box box-danger box-solid" style="margin:0;padding:0;margin-bottom: 5px;margin-top: 5px; border:#ccc 1px solid;">
+            <div class="box-header with-border" style="background-color:#ddd;">
+                <a href="{:url('user/order_detail', array('order_id'=>$this->_var['orders']['order_id']))}" style="color:#666;" class="act">
+                    <h4 style="font-size: 12px;" class="box-title">
+                        {$lang.order_number}：{$orders.order_sn}
+                    </h4>
+                </a>
+                <div class="box-tools pull-right" style="line-height: 41px; color:#666; font-size:14px;">
+                    {$orders.order_status}&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{:url('user/order_detail', array('order_id'=>$this->_var['orders']['order_id']))}" style="color:#666; font-size:14px;" class="act">
+                        查看订单
+                    </a>
+                </div>
+            </div>
+            <div class="box-body">
+                <ul class="nav nav-stacked">
+                    {foreach name=orders from=$orders.goods_info item=goods}
+                        <li class="row" style="margin: 0;padding: 15px 0 0 0;">
+                            <img class="col-xs-4" style="width: 80px;" src="{$path}/{$goods.goods_thumb}" alt="">
+                            <p class="col-xs-8" style="width:40%;">
+                                <a href="{:url('goods/index',array('id'=>$this->_var['goods']['goods_id']))}">{$goods.goods_name|truncate:15:"..."}</a>
+                            </p>
+                            <!--{if $orders.order_status eq '已完成'}-->
+                            <p class="col-xs-2"  style="margin-right: 20px; padding:0;">
+                                <!--{if $goods.is_comment == 0}-->
+                                <a class="btn btn-app" href="{:url('comment/comment',array('oid'=>$this->_var['orders']['order_id'],'gid'=>$this->_var['goods']['goods_id']))}">
+                                    <i class="fa fa-edit"></i>
+                                    去评价
+                                </a>
+                                <!--{else}-->
+
+                                    <i class="fa fa-check-circle-o"></i>
+                                    已评价
+
+                                <!--{/if}-->
+                            </p>
+                            <!--{else}-->
+                            &nbsp;
+                            <!--{/if}-->
+
+                        </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+
+    {/foreach}
+<!--	<div class="" style="border-bottom:none;">
+		<ul id="J_ItemList">
+		 &lt;!&ndash;{foreach name=orders_list from=$orders_list item=orders}&ndash;&gt;
+		 <a href="{:url('user/order_detail', array('order_id'=>$this->_var['orders']['order_id']))}">
+			<li>
+			<dl class="all-order">
+			  <dt>
+				<h4 class="title">{$lang.order_number}：{$orders.order_sn}</h4>
+			  </dt>
+			  <dd>{$lang.order_status}：{$orders.order_status}{if $orders.order_status eq '已完成'}去评价{else}&nbsp;{/if}</dd>
+			  <dd>{$lang.order_total_fee}：<span class="ect-color">{$orders.total_fee}</span></dd>
+			  <dd>{$lang.order_addtime}：{$orders.order_time}</dd>
+			</dl>
+			<i class="pull-right fa fa-angle-right"></i> 
+			</li>
+		</a> 
+		&lt;!&ndash;{/foreach}&ndash;&gt;
+		</ul>
+	</div>-->
+</section>
+ {include file='library/page.lbi '}
+{/if}
+<!--</div>-->
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+{foreach from=$lang.merge_order_js item=item key=key}
+    var {$key} = "{$item}";
+{\/foreach}
+if({$show_asynclist}){
+get_asynclist('index.php?m=default&c=user&a=async_order_list&pay={$pay}' , '__TPL__/images/loader.gif');
+}
+</script> 
+</body></html>

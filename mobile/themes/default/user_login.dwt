@@ -1,0 +1,117 @@
+<!-- #BeginLibraryItem "/library/user_top.lbi" --><!-- #EndLibraryItem -->
+<!--
+<form name="formLogin" action="{:url('user/login')}" method="post" class="validforms">
+ <div class="flow-consignee ect-bg-colorf">
+     <section>
+      <ul>
+      
+      <li>
+        <div class="input-text"><b>{$lang.username}：</b><span><input placeholder="{$lang.username}/{$lang.mobile}/{$lang.email}" name="username" type="text"  class="inputBg" id="username" datatype="*" ></span></div>
+        </li>
+        <li>
+        <div class="input-text"><b>{$lang.label_password}：</b><span><input placeholder="{$lang.label_password}"  name="password" type="password" class="inputBg" datatype="*6-16" /></span></div>
+        </li>
+        <!-- 判断是否启用验证码{if $enabled_captcha} -->
+<!--       <li>
+          <div class="input-text code"><b>{$lang.comment_captcha}</b><span>
+             <input name="captcha" type="text" placeholder="{$lang.comment_captcha}">
+             </span><img src="{:url('Public/captcha', array('rand'=>$this->_var['rand']))}" alt="captcha" class="img-yzm pull-right" onClick="this.src='{:url('public/captcha')}&t='+Math.random()" /></div>
+            </li>
+            <!--{/if}-->
+<!--      </ul>
+    </section>
+  </div>
+  <p class="ect-checkbox ect-padding-tb ect-margin-tb ect-margin-bottom0 ect-padding-lr">
+     <input type="checkbox" value="1" name="remember" id="remember" class="l-checkbox" />
+     <label for="remember">{$lang.remember}<i></i></label>
+      <!-- {if $anonymous_buy eq 1 && $step eq 'flow'} 是否允许未登录用户购物 -->
+<!--      <a href="{:url('flow/consignee',array('direct_shopping'=>1))}" style="float:right;">{$lang.direct_shopping}</a>
+      <!-- {/if} -->
+     
+<!--  </p>
+   <input type="hidden" name="back_act" value="{$back_act}" />
+  <div class="ect-padding-lr ect-padding-tb"> 
+  <input type="submit" class="btn btn-info ect-btn-info ect-bg" value="{$lang.now_landing}" />
+  </div>
+  </form>
+  <p class="ect-padding-lr ect-margin-tb text-right ect-margin-bottom0" style="clear:both;">
+  <a href="{:url('user/get_password_phone')}">{$lang.forgot_password}</a>  
+  <a href="{:url('user/register')}">{$lang.free_registered}</a>
+  </p>
+  <div class="ect-padding-lr ect-margin-tb user-hezuo">
+    {$lang.third_login}
+    <p>
+      <a href="{:url('user/third_login',array('type'=>'qq'))}"><img src="__TPL__/images/qq.png"></a>
+        <a href="{:url('user/third_login',array('type'=>'sina'))}"><img src="__TPL__/images/weibo.png"></a>
+    </p>
+  </div>
+  </div>
+-->
+
+<div class="container">
+  <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <p class="text-center" style="margin-top:40px"><a href="{:url('index/index')}"><img src="images/logo3.png"></p></a>
+      </div>
+  </div>
+  <form name="formLogin" action="{:url('user/login')}" method="post" class="validforms">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1" style="margin-top:60px; position:relative;">
+          <input  class="form-control" style=" border-radius:5px; padding-left:14%; height:40px; font-size:14px" placeholder="{$lang.username}/{$lang.mobile}/{$lang.email}" name="username" type="text" id="username" datatype="*" >
+            <img src="images/iconfont-yonghutianchong.png" style="position:absolute; height:60%; top:20%; left:8%">
+        </div>  
+  </div>
+  
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1" style="margin-top:20px; position:relative;">
+          <input  class="form-control" style=" border-radius:5px; padding-left:14%; height:40px; font-size:14px" placeholder="{$lang.label_password}"  name="password" type="password" class="inputBg" datatype="*6-16">
+            <img src="images/iconfont-mima.png" style="position:absolute; height:60%; top:20%; left:8%">
+        </div>  
+  </div>
+  
+  <div class="row" style=" margin-top:30px">
+      <div class="col-xs-3 col-xs-offset-1">
+          <p class="text-center"><a style=" text-decoration:none; color:#e95466" href="{:url('user/register')}">{$lang.free_registered}</a></p>
+        </div>
+      <div class="col-xs-3 col-xs-offset-4">
+          <p class="text-center">
+            <a style=" text-decoration:none; color:#e95466" href="{:url('user/get_password_phone')}">{$lang.forgot_password}</a> </p>
+      </div>
+  </div>
+  
+  <div class="row">
+      <input type="hidden" name="back_act" value="{$back_act}" />
+      <div class="col-xs-10 col-xs-offset-1" style="margin-top:10px; position:relative;">
+       
+        <input type="submit"  class="btn btn-primary btn-lg btn-block" value="{$lang.now_landing}" style="border-radius:5px; background-color:#e95466; border:none; height:50px" />
+      </div>
+  </div>
+  
+  <div class="row">
+      <div class="col-xs-1 col-xs-offset-7">
+          
+        <div class="checkbox navbar-text text-right">
+        <label>
+        <input type="checkbox" value="">
+            </label>
+      </div>  
+            
+      </div>
+        <div class="col-xs-3">
+          
+          <p class="text-left" style="margin-left:-15px; margin-top:30px">永久免登录</p>
+            
+        </div>
+  </div>
+  </form>
+  
+  
+</div>
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="flow-wrap clearfix" data-spm="20131102">
+<div class="flow-main" data-spm="a2224p3"> <a href=""><img src="images/store/T1mxN6FspXXXaCwpjX.png" alt="主图"></a> </div>
+<!--{foreach from=$shops_list item=shop}--> 
+	<div class="flow-item" onMouseOver="store_focus({$shop.supplier_id})" onMouseOut="store_nofocus({$shop.supplier_id})"> <a href="supplier.php?suppId={$shop.supplier_id}"> <img title="{$shop.supplier_name}" width="220" height="220" alt="" data-original="{$shop.logo}" src="themes/68ecshopcom_360buy/images/loading.gif" >
+	  <p class="flow-logo"> <img id="j_logo_{$shop.supplier_id}" alt="" width="90" height="45" data-original="{$logopath}logo_supplier{$shop.supplier_id}.jpg" src="themes/68ecshopcom_360buy/images/loading.gif"> </p>
+	  <h4 class="flow-title">{$shop.supplier_title}</h4>
+	  <p class="flow-desc">{$shop.supplier_desc}</p></a>
+	  <b class="ui-brand-btn j_CollectBrand" style="display: none;" id="j_brand_{$shop.supplier_id}"><i></i><!---{if $shop.shop_closed}--><span>装修中..</span><!---{else}--><span onclick='guanzhu({$shop.supplier_id});'>关注</span><!---{/if}--><b></b></b>
+	  <b class="flow-tag"><span>{$shop.supplier_tags}</span><b class="classic"></b></b>
+	  <p class="box-num"><em class="j_SubjectCountNum" data-subjectid="730143">990</em>人捧场</p>
+	  </div>
+<!--{foreachelse}-->
+<div >
+没有找到相应店铺！
+</div>
+<!--{/foreach}-->	
+</div>

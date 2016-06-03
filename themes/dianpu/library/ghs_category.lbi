@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.ghs_cat li{
+	line-height:38px;
+	}
+.ghs_cat p,h4{
+	cursor:pointer;
+	}
+</style>
+<div class="ghs_cat" id="zzz">
+<!--{foreach from=$categories item=cat name=catname}-->
+	<div class="ghs_ctitle" {if !$smarty.foreach.catname.last} style="border-bottom:none"{/if}>
+    	<h4 class="mall_cat" onclick="tab({$smarty.foreach.catname.index})" id="cat_{$smarty.foreach.catname.index}">
+    	   <a title="{$cat.name|escape:html}">{$cat.name|escape:html}</a>
+    	</h4>
+    	<ul style="display:none;">
+	       <!--{foreach from=$cat.cat_id item=child name=name}-->
+		    <li class="cat_title {if $smarty.foreach.name.last}last{/if}"><A  title="{$child.name|escape:html}" href="{$child.url}">{$child.name|escape:html}</A>		   
+		    </li>    
+	       <!--{/foreach}-->
+       </ul>
+    </div>
+    
+<!--{/foreach}-->
+</div>
+<script>
+obj_ul = document.getElementById("zzz").getElementsByTagName("ul");
+function tab(id)
+{        
+        if(obj_ul.item(id).style.display == "block")
+        {
+            obj_ul.item(id).style.display = "none"
+            return false
+        }
+        else(obj_ul.item(id).style.display == "none")
+        {
+            obj_ul.item(id).style.display = "block"
+            return false           
+        }		
+}
+				
+</script>

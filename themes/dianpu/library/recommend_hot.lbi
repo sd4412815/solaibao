@@ -1,0 +1,43 @@
+<!-- {*YWT_增加代码*} -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<div class="xm-box">
+<h4 class="title"><span>2F 热卖商品</span> <a class="more" href="supplier.php?go=more&suppId={$smarty.session.suppId}&id=10445">更多</a></h4>
+ <!--{foreach from=$goods_hot item=hots}-->
+<div id="show_hot_area" class="clearfix" style="height:200px;">
+   <div class="goodsintro">
+       <img src="images/index/pic02.jpg" />
+   </div>
+   <!--{/foreach}-->
+  <!-- {/if} -->
+    <div style="float:right; width:960px;" >
+  <!--{foreach from=$hot_goods item=hot}-->
+  <div class="goodsItem" >
+       
+           <a href="supplier.php?go=goods&suppId={$hot.suppid}&id={$hot.goods_id}&pid={$hot.parent_id}"><img src="{if $hot.goods_thumb eq ''}images/no_picture.png{else}{$hot.goods_thumb}{/if}" alt="{$hot.goods_name|escape:html}" class="goodsimg" /></a>
+           <p class="f1"><a href="supplier.php?go=goods&suppId={$hot.suppid}&id={$hot.goods_id}&pid={$hot.parent_id}" title="{$hot.goods_name|escape:html}">{$hot.goods_name}</a></p>
+           
+           
+ 市场价：<font class="market">{$hot.market_price}</font> <br/>
+      
+           本店价：<font class="f1">
+           <!-- {if $hot.promote_price neq ""} -->
+          {$hot.promote_price}
+          <!-- {else}-->
+          {$hot.shop_price}
+          <!--{/if}-->
+           </font>      
+		    
+        </div>
+      
+  <!--{/foreach}-->
+   </div>
+  <!-- {if $cat_rec_sign neq 1} -->
+  </div>
+
+</div>
+<div class="blank"></div>
+  <!-- {/if} -->
+<!-- {/if} -->
+<!-- {*YWT_增加代码end *} -->

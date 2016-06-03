@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - ecshop@192.168.0.5 [2]" uuid="1d925385-186a-45c7-930f-da7fffaeb6d7">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>ecshop.*</schema-pattern>
+      <default-schemas>ecshop.*</default-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,66 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="block box" style="border:0px; background:0px;">
+<div class="blank" style="border:0px; "></div>
+<div id="ur_here">
+<!-- {if $smarty.get.id eq 684} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 洗浴护肤
+<!-- {elseif $smarty.get.id eq 685} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 喂养用品
+<!-- {elseif $smarty.get.id eq 686} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 纸尿裤
+<!-- {elseif $smarty.get.id eq 687} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 婴儿奶粉
+<!-- {elseif $smarty.get.id eq 688} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 杀菌用品
+<!-- {elseif $smarty.get.id eq 689} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>母婴用品> 其他
+<!-- {elseif $smarty.get.id eq 691} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 面膜
+<!-- {elseif $smarty.get.id eq 692} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 面霜
+<!-- {elseif $smarty.get.id eq 693} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> BB霜
+<!-- {elseif $smarty.get.id eq 694} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 彩妆
+<!-- {elseif $smarty.get.id eq 695} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 眼部护理
+<!-- {elseif $smarty.get.id eq 696} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 洗面奶
+<!-- {elseif $smarty.get.id eq 697} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 瘦身贴
+<!-- {elseif $smarty.get.id eq 698} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 护手霜
+<!-- {elseif $smarty.get.id eq 699} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>美妆饰品> 套装
+<!-- {elseif $smarty.get.id eq 701} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>食品保健品> 营养保健
+<!-- {elseif $smarty.get.id eq 702} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>食品保健品> 咖啡饮品
+<!-- {elseif $smarty.get.id eq 703} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>食品保健品> 冲调饮品
+<!-- {elseif $smarty.get.id eq 704} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>食品保健品> 休闲食品
+<!-- {elseif $smarty.get.id eq 705} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>食品保健品> 特色红参
+<!-- {elseif $smarty.get.id eq 707} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 洗护用品
+<!-- {elseif $smarty.get.id eq 708} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 美发护理
+<!-- {elseif $smarty.get.id eq 709} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 卫生巾
+<!-- {elseif $smarty.get.id eq 710} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 除味剂
+<!-- {elseif $smarty.get.id eq 711} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 电饭煲
+<!-- {elseif $smarty.get.id eq 712} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>家居日化> 小家电
+<!-- {elseif $smarty.get.id eq 714} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>其他> 太阳镜
+<!-- {elseif $smarty.get.id eq 715} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>其他> 皮包
+<!-- {elseif $smarty.get.id eq 716} -->
+{$lang.ur_here}<a href="supplier.php?suppId={$smarty.session.suppId}"> 店铺首页> </a>其他> 杂货
+<!-- {/if} -->
+</div>
+</div>
+<div class="blank"></div>

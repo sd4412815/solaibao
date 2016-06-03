@@ -1,0 +1,10 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="con">
+  <div style="height:7.2em;"></div>
+  <header>
+    <nav class="ect-nav ect-bg icon-write"> <!-- #BeginLibraryItem "/library/page_menu.lbi" --><!-- #EndLibraryItem --> </nav>
+  </header>
+  <!-- #BeginLibraryItem "/library/Goods_new_desc.lbi" --><!-- #EndLibraryItem --> </div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+
+</body></html>

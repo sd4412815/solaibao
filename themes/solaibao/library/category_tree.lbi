@@ -1,0 +1,56 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <div id="category_tree">
+        <div class="tit">所有商品分类{$cat.url}</div>
+        <dl class="clearfix" style=" overflow:hidden;" >
+            <div class="box1 cate" id="cate">
+                <!--{foreach from=$categories item=cat name=no}-->
+			    <h1 onclick="tab({$smarty.foreach.no.index})"  <!-- {if $smarty.foreach.no.first} --> style="border-top:none;"<!-- {/if} -->  >
+		          
+		            <a name="{$cat.url}" {if (!($cat.cat_id))}onclick="xy(this);" {/if}>{$cat.name|escape:html}</a>
+       
+		        </h1>
+	            <ul style="display:none; margin-left:30px;" >
+	            <!--{foreach from=$cat.cat_id item=child}-->
+	                <a class="over_2" href="{$child.url}">{$child.name|escape:html}</a>  		 
+                        <div class="clearfix">
+                            <!--{foreach from=$child.cat_id item=childer}-->
+                            <a class="over_3" href="{$childer.url}">{$childer.name|escape:html}</a>
+                            <!--{/foreach}-->
+                        </div>   
+	            <!--{/foreach}-->
+	            </ul>
+	            <div style="clear:both"></div>
+                <!--{/foreach}--> 
+            </div>
+			<div style="clear:both"></div>
+		</dl>  
+	</div>   
+                <div class="blank"></div>
+
+				<script type="text/javascript">
+					obj_h4 = document.getElementById("cate").getElementsByTagName("h4")
+					obj_ul = document.getElementById("cate").getElementsByTagName("ul")
+					obj_img = document.getElementById("cate").getElementsByTagName("img")
+					function tab(id)
+					{ 
+					        var elem = obj_ul.item(id).childNodes
+					         if(obj_ul.item(id).style.display == "block")
+					        {
+					            obj_ul.item(id).style.display = "none"
+					            return false
+					        }
+					        else(obj_ul.item(id).style.display == "none")
+					        {
+					            obj_ul.item(id).style.display = "block"
+					            return false
+					           
+					        }
+
+							
+					}
+					function xy(e){
+					 var k = e.name;
+					 location.href=k;
+					}
+				</script>

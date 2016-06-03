@@ -1,0 +1,24 @@
+{* 代码增加_start  BY  morestock_morecity *}
+<div class="region_city">
+  <div class="selectcity">
+    <div style="float:left;font-size:12px;"> {$address_title} </div>
+    <div class="province" onmouseover="document.getElementById('citybox_childmenu').style.display='block';this.className='province_cur';"  id="province_box"> 
+    	<font id="province">{$fullname}</font>
+        <input type="hidden" name="store_province_id" id="store_province_id" value="">
+    </div>
+    {if $from eq 'list'}{/if} 
+  </div>
+  <div class="childmenu" id="citybox_childmenu"  >
+    <div class="citybox_close" onclick="javascript:document.getElementById('citybox_childmenu').style.display='none';document.getElementById('province_box').className='province';"></div>
+    <div class="cityul"> 
+     {foreach from=$shownames key=pid item=names}
+      <div class={if $pid eq 1}"licur"{else}"li"{/if} onclick="javascript:get_regions({$pid}, 0)" id="city_li_{$pid}" style="display:{if $names}block{else}none{/if}">{$names}<i></i></div>
+      {/foreach} 
+    </div>
+    <div style="clear:both;"></div>
+    {foreach from=$divlevels key=did item=levels}
+    <div class="childli" id="city_box_{$did}" style="display:{if $did eq 1}block{else}none{/if}"> {foreach from=$levelsinfo[$levels] key=iid item=infos} <a href="javascript:void(0);" onclick="get_regions({$did}, '{$iid}');" style="text-decoration:none;">{$infos}</a> {/foreach} </div>
+    {/foreach} 
+    </div>
+</div>
+{* 代码增加_end  BY  morestock_morecity *}

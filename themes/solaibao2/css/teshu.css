@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+#sn-bd{ width:990px !important;}
+#menu-8{ width:990px !important;}
+#menu-8 .site-hot, #menu-8 .site-market, #menu-8 site-brand{ width:285px !important;}
+#menu-8 {
+	width: 990px !important;
+}
+#menu-8 .site-hot, #menu-8 .site-market, #menu-8 site-brand {
+	width: 285px !important;
+}
+.wrapper{ width:990px !important; margin:0 auto;}
+.info-text{ width:990px !important;}
+.headerCon {
+    margin: 0 auto;
+    width: 990px;
+}

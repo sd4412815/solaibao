@@ -1,0 +1,102 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <script type="text/javascript" src="data/flashdata/{$flash_theme}/data.js"></script>
+<script src="../js/jquery.js"></script>
+<script>
+
+ $(document).ready(function(){
+   	var imgarray =pics.split("|");
+	var linksarray=links.split("|");
+	 console.info(linksarray);
+
+   	var parent = document.getElementById("test1");
+	var linknum=linksarray.length;
+	 if(linknum!=0){
+		 for(var i=0;i<linknum;i++){
+		 	var href = document.createElement("a");
+		  	parent.appendChild(href);
+			 href.href = 'http://'+linksarray[i].substring(9);
+			 href.id='yuan'+i;
+			 var img_id = document.getElementById("yuan"+i);
+			 var node = document.createElement("img");
+			 img_id.appendChild(node);
+			 node.src = 'data' + imgarray[i].substring(5);
+		  }
+	 }
+
+	 var num = imgarray.length;
+/*   if(num != 0){
+
+
+     for(var i=0;i<num;i++){
+        var node = document.createElement("img");
+        img_id.appendChild(node);
+		node.src = 'data' + imgarray[i].substring(5);
+     }
+   }*/
+ });
+</script>
+<style>
+
+img{ display:block;}
+._banner{ position:relative; height:400px; overflow:hidden; margin-top:1px; width:1920px; margin:auto;}
+.banner_move{ z-index:0; position:relative;}
+.banner_move img{float:left;width:1920px;}
+
+.btn_box{ position:relative; height:0px; background-color:#000000;}
+.btn{ position:absolute; left:50%; margin-left:-105px;top:-30px; z-index:3; width:210px}
+.btn span{width:30px; height:15px;-webkit-border-radius:8px; -moz-border-radius:8px; border-radius:8px; background-color:#ffffff; float:left; margin:0 5px;box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4); opacity:0.8}
+.btn .btn_current{ background-color:#e95466;}
+</style>
+<div class="_banner">
+    <div class="banner_move" id="test1">
+
+    </div>
+</div>
+<div class="btn_box">
+	<div class="btn" style="width:300px;">
+
+	</div>
+</div>
+	<div style="clear:both;"></div>
+
+<script>
+
+var imgstr = pics.split("|");
+var num2 = imgstr.length;
+var n=0;
+for(var i=0; i<num2-1; i++){
+	$(".btn").append('<span style="color:#44e; text-align: center;"></span>');
+	}
+$(".banner_move").width(num2*1920);
+$(".btn span").eq(0).addClass("btn_current")
+function run(){
+	if(n < $(".banner_move img").length-1){
+	n=n+1
+	}else{
+	$(".banner_move").css({marginLeft:0})
+	n=1	
+	}	
+	$(".banner_move").animate({marginLeft:-1920*n},1000)
+	$(".btn span").removeClass("btn_current")
+	if(n==$(".banner_move img").length-1){
+		$(".btn span").eq(0).addClass("btn_current")
+		}else{
+		$(".btn span").eq(n).addClass("btn_current")
+		}
+}
+var t=setInterval(run,3000)
+$(".btn span").mouseenter(
+	function(){
+		clearInterval(t)
+		n=$(".btn span").index(this)
+		$(".banner_move").stop().animate({marginLeft:-1920*n},1000)
+		$(".btn span").removeClass("btn_current")
+		$(this).addClass("btn_current")	
+	}
+)
+$(".btn span").mouseleave(
+	function(){
+		 t=setInterval(run,3000)
+	}
+)
+</script>

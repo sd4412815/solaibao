@@ -1,0 +1,43 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<ul class="allMenu Left">
+  <li ><a class=" index nav" href="index.php" title="首页">首页</a></li>
+  <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav } --> 
+
+  <li><a href="{$nav.url}"  class="nav"  title="{$nav.name}">{$nav.name}</a></li>
+
+  <!-- {/foreach} -->
+</ul>
+<ul class="sideMenu2 Right">
+  <li onMouseOver="sw_nav('11',1);" onMouseOut="sw_nav('11',0);" class="shopnima" style="background:none; padding-left:0;"> 
+  	<a id="a_div11" href="activity.php" target="_blank" style="width:72px;" class="nav">优惠活动</a><span class="ico_xia1" style=" right:5px""></span>
+    <div class="header_box" id=DisSub_11 style="display:none;"> 
+    	<a href="activity.php" target="_blank" style="width:70px;">价格折扣</a> 
+        <a href="activity.php" target="_blank" style="width:70px;">现金减免</a> 
+        <a href="activity.php" target="_blank" style="width:70px;">享受赠品</a> 
+    </div>
+  </li>
+  <li> 
+  	<a href="exchange.php" target="_blank" title="积分俱乐部" class="nav">积分俱乐部</a>
+    
+  </li>
+  <li><a href="pro_search.php?intro=promotion" target="_blank"  title="限时抢购" class="nav">限时抢购</a> </li>
+</ul>
+<script type="text/javascript">
+      //初始化主菜单
+		function sw_nav(obj,tag)
+		{
+		var DisSub = document.getElementById("DisSub_"+obj);
+		var a_div= document.getElementById("a_div"+obj);
+			if(tag==1)
+			{
+				DisSub.style.display = "block";
+				a_div.className="current";
+
+			}
+			else
+			{
+				DisSub.style.display = "none";
+				a_div.className="";
+			}
+		}
+</script>

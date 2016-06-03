@@ -1,0 +1,195 @@
+<?php
+
+/**
+ * 文件名称：GoodslistControoller.class.php
+ * ----------------------------------------------------------------------------
+ * 功能描述：商品分类控制器
+ * ----------------------------------------------------------------------------
+ */
+/* 访问控制 */
+// YWT_增加代码
+class GoodslistController extends CommonController {
+
+public function index(){
+
+    $inde = model('Goodslist')->desc_new();
+    foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_new_desc.dwt');
+}
+public function index1(){
+
+    $inde = model('Goodslist')->asc_new();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_new_asc.dwt');
+}
+public function index2(){
+
+    $inde = model('Goodslist')->desc_hot();
+    foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_hot_desc.dwt');
+}
+public function index3(){
+
+    $inde = model('Goodslist')->asc_hot();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_hot_asc.dwt');
+}
+public function index4(){
+
+    $inde = model('Goodslist')->desc_best();
+    foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_best_desc.dwt');
+}
+public function index5(){
+
+    $inde = model('Goodslist')->asc_best();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_best_asc.dwt');
+}
+public function renqi(){
+    $inde = model('Goodslist')->desc_new1();
+    foreach ($inde as $k => $v) {
+        $inde[$k]['thumb'] = get_image_path($v[0]['goods_id'], $v['goods_thumb']);
+        $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v[0]['goods_id']);
+        $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v[0]['goods_id']);
+        $inde[$k]['url'] = url('goods/index', array('id' => $v[0]['goods_id']));
+    }
+    print_r($inde);
+    die();
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_new_desc.dwt');
+}
+public function renqi1(){
+
+    $inde = model('Goodslist')->asc_new1();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_new_asc.dwt');
+}
+public function renqi2(){
+
+    $inde = model('Goodslist')->desc_hot1();
+    foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_hot_desc.dwt');
+}
+public function renqi3(){
+
+    $inde = model('Goodslist')->asc_hot1();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_hot_asc.dwt');
+}
+public function renqi4(){
+
+    $inde = model('Goodslist')->desc_best1();
+    foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_best_desc.dwt');
+}
+public function renqi5(){
+
+    $inde = model('Goodslist')->asc_best1();
+     foreach ($inde as $k => $v) {
+       $inde[$k]['thumb'] = get_image_path($v['goods_id'], $v['goods_thumb']);
+       $inde[$k]['sales_count'] = model('GoodsBase')->get_sales_count($v['goods_id']);
+       $inde[$k]['sc'] = model('GoodsBase')->get_goods_collect($v['goods_id']);
+       $inde[$k]['url'] = url('goods/index', array('id' => $v['goods_id']));
+    }
+    $this->assign('new_goods',$inde);
+    $this->display('mobile_best_asc.dwt');
+}
+public function new1 () {
+        $new = $_GET['new'];
+        $newlist = model('GoodsList')->get_new();
+        $array = model('Index')->goods_list('new',10);
+        foreach ($newlist as $k => $arr) {
+            $array[$k]['goods_id']=$arr['goods_id'];
+            $array[$k]['is_new']=$arr['is_new'];
+        }
+        $this->assign('new_goods', $array);
+        $this->display('mobile_new_list.dwt');
+    }
+public function hot() {
+        $hot = $_GET['hot'];
+        $hotlist = model('GoodsList')->get_hot();
+        $array = model('Index')->goods_list('hot',10);
+        foreach ($hotlist as $k => $arr) {
+        	$array[$k]['goods_id']=$arr['goods_id'];
+        	$array[$k]['is_hot']=$arr['is_hot'];
+        }
+        $this->assign('new_goods',$array);
+        $this->display('mobile_hot_list.dwt');
+    }
+public function best1() {
+        $best = $_GET['best'];
+        $bestlist = model('GoodsList')->get_best();
+        $array = model('Index')->goods_list('best',10);
+        foreach ($bestlist as $k => $arr) {
+        	$array[$k]['goods_id']=$arr['goods_id'];
+        	$array[$k]['is_best']=$arr['is_best'];
+        }
+        $this->assign('new_goods',$array);
+        $this->display('mobile_best_list.dwt');
+    }
+public function salse(){
+  
+}
+}
+// YWT_增加代码end

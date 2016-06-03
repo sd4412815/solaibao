@@ -1,0 +1,60 @@
+{* 代码增加_start  BY morestock_morecity *}
+<style type="text/css">
+#site-nav .sn-login-info{position:absolute;left:80px;top:0px}
+#site-nav ul.region{position:absolute;left:0px;top:0px}
+#site-nav ul.region .tubiao{background:url(themes/68ecshopcom_360buy/images/header/17.png) no-repeat scroll -5px 0px transparent;height: 18px;width: 12px;display: inline-block;float:left;margin: 2px}
+#site-nav ul.region li{float:left;position:relative;padding:0 5px;line-height:20px;cursor:pointer;z-index:99999999;height:20px;margin:3px 0 0 5px;background:#ff3300;}
+#site-nav ul.region li #city-box1{position:absolute;overflow-y:auto;overflow-x:hidden;padding:10px;border:1px solid #ccc;background:#fff;width:400px;height:200px;top:20px;left:0px;}
+#site-nav ul.region li #city-box1 table td.nowcityname{border-bottom:1px solid #ddd;color:#333}
+#site-nav ul.region li #city-box1 table td.city_key{padding:10px 0px 0px}
+#site-nav ul.region li #city-box1 table td.city_key b{width:21px;height: 19px;background: url('themes/68ecshopcom_360buy/images/header/change_city3.gif') no-repeat;text-align: center;line-height: 19px;color: #FFF;font-family: Arial;font-size: 14px;font-weight: normal; display:inline-block;}
+#site-nav a.region_name{padding:3px;color:#333}
+#site-nav a.region_name:hover{background:#ff3300;color:#ffffff; text-decoration:none}
+</style>
+<ul class="region">
+  <script type="text/javascript">
+	function show_city1(){
+	var qs=document.getElementById('city-box1');
+	qs.style.display="block";
+	}
+	function hide_city1(){
+	var qs=document.getElementById('city-box1');
+	qs.style.display="none";
+	}
+	{literal}
+	function chang_city(kk)
+	{
+		Ajax.call('region_city.php', 'act=setcity&rid=' + kk , set_city_response, 'GET', 'JSON');
+	}
+	function set_city_response(result){
+		 document.cookie="region_1="+result.cookieinfo['region_1'];
+		 document.cookie="region_2="+result.cookieinfo['region_2'];
+		 document.cookie="region_3=0";
+		 document.cookie="region_4=0";
+		//alert(result.result);
+		top.location.reload();
+	}
+	{/literal}
+	</script> 
+  <b class="tubiao"></b>
+  <li onMouseOver="show_city1();" onMouseOut="hide_city1();"><font style="color:#fff;" id='header_city_name'>{$nowcityname}</font>
+    <div id="city-box1" style="display:none;">
+      <table width="100%" cellpadding=5 cellspacing=1>
+        <tr>
+          <td class="nowcityname" colspan=2>当前城市：<b id='header_city_name2'>{$nowcityname}</b></td>
+        </tr>
+        {foreach from=$zimu_city key=city_key item=city_val}
+        <tr>
+          <td width="8%" valign="top" class="city_key" style=""><b>{$city_key}</b></td>
+          <td valign="top"  class="city_key"> 
+          {foreach from=$city_val item=ccity} 
+          	<a href="javascript:void(0)" onclick="chang_city('{$ccity.region_id}')" class="region_name">{$ccity.region_name}</a>&nbsp;
+          {/foreach} 
+          </td>
+        </tr>
+        {/foreach}
+      </table>
+    </div>
+  </li>
+</ul>
+{* 代码增加_end  BY morestock_morecity *}

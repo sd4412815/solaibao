@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/includes/lib_order.php" line="846" mnemonic="2" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="9f59a1cc-5dfd-46f1-82d4-b8a88112fe5c" name="Default" comment="" />
+    <ignored path="code.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="code" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="flow.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/flow.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="515" column="75" selection-start-line="515" selection-start-column="68" selection-end-line="515" selection-end-column="75" />
+              <folding>
+                <marker date="1464835313996" expanded="true" signature="10523:10640" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="12543:12628" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="20030:20098" placeholder="SELECT is_gi... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="20750:20903" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="23375:23544" placeholder="SELECT count... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="48541:48719" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="55324:55439" placeholder="SELECT shipp... ${$ecs-&gt;table('shipping')}" />
+                <marker date="1464835313996" expanded="true" signature="60122:60775" placeholder="INSERT INTO ${$ecs-&gt;table('order_goods')}... " />
+                <marker date="1464835313996" expanded="true" signature="60405:60697" placeholder="SELECT '${$n... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="62887:63142" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="69710:69790" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+                <marker date="1464835313996" expanded="true" signature="69896:69995" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="70272:70379" placeholder="SELECT goods... ${$ecs-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="70414:70535" placeholder="SELECT goods... ${$ecs-&gt;table('collect_goods')}" />
+                <marker date="1464835313996" expanded="true" signature="70626:70789" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('collect_goods')}... " />
+                <marker date="1464835313996" expanded="true" signature="80727:80888" placeholder="SELECT produ... ${$GLOBALS['ecs']-&gt;table('products')}" />
+                <marker date="1464835313996" expanded="true" signature="81727:82105" placeholder="SELECT b.goo... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="82480:82692" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="83865:84069" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="84152:84267" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="84354:84456" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="85898:86057" placeholder="SELECT produ... ${$GLOBALS['ecs']-&gt;table('products')}" />
+                <marker date="1464835313996" expanded="true" signature="86902:86973" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="87138:87306" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="87488:88003" placeholder="SELECT c.rec... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="88325:88543" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="88628:88796" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="89029:89492" placeholder="SELECT c.rec... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="89763:89940" placeholder="SELECT DISTI... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+                <marker date="1464835313996" expanded="true" signature="90590:90728" placeholder="DELETE FROM " />
+                <marker date="1464835313996" expanded="true" signature="92656:92753" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+                <marker date="1464835313996" expanded="true" signature="94214:94308" placeholder="SELECT brand... ${$GLOBALS['ecs']-&gt;table('brand')}" />
+                <marker date="1464835313996" expanded="true" signature="94494:94587" placeholder="SELECT cat_n... ${$GLOBALS['ecs']-&gt;table('category')}" />
+                <marker date="1464835313996" expanded="true" signature="94770:94864" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+                <marker date="1464835313996" expanded="true" signature="96283:96833" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('cart')}... " />
+                <marker date="1464835313996" expanded="true" signature="96542:96833" placeholder="SELECT '${$_... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+                <marker date="1464835313996" expanded="true" signature="97091:97519" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('cart')}... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="XHTML File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/controller/ArticleController.class.php" />
+        <option value="$PROJECT_DIR$/themes/solaibao/library/page_footer.lbi" />
+        <option value="$PROJECT_DIR$/includes/Usms.php" />
+        <option value="$PROJECT_DIR$/themes/solaibao/user_passport.dwt" />
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/model/OrderModel.class.php" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/comment_list.dwt" />
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/model/CommentModel.class.php" />
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/model/UsersModel.class.php" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/library/page_header.lbi" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/library/page_footer.lbi" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/library/user_header.lbi" />
+        <option value="$PROJECT_DIR$/mobile/data/common/dist/css/AdminLTE.css" />
+        <option value="$PROJECT_DIR$/themes/dianpu/AdminLTE.min.css" />
+        <option value="$PROJECT_DIR$/mobile/data/common/dist/css/AdminLTE.min.css" />
+        <option value="$PROJECT_DIR$/data/config.php" />
+        <option value="$PROJECT_DIR$/data/config.php" />
+        <option value="$PROJECT_DIR$/slb_manager/js/listtable.js" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/user_order_detail.dwt" />
+        <option value="$PROJECT_DIR$/apply.php" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/comment_info.dwt" />
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/controller/CommentController.class.php" />
+        <option value="$PROJECT_DIR$/includes/lib_clips.php" />
+        <option value="$PROJECT_DIR$/user.php" />
+        <option value="$PROJECT_DIR$/user.php" />
+        <option value="$PROJECT_DIR$/supplier.php" />
+        <option value="$PROJECT_DIR$/supplier_index.php" />
+        <option value="$PROJECT_DIR$/slb_manager/supplier.php" />
+        <option value="$PROJECT_DIR$/slb_manager/includes/lib_main.php" />
+        <option value="$PROJECT_DIR$/includes/lib_order.php" />
+        <option value="$PROJECT_DIR$/slb_manager/navigator.php" />
+        <option value="$PROJECT_DIR$/themes/solaibao/goods.dwt" />
+        <option value="$PROJECT_DIR$/includes/lib_common.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/themes/solaibao/library/recommend_best.lbi" />
+        <option value="$PROJECT_DIR$/themes/solaibao/library/recommend_hot.lbi" />
+        <option value="$PROJECT_DIR$/themes/solaibao/library/recommend_new.lbi" />
+        <option value="$PROJECT_DIR$/themes/solaibao/index.dwt" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/flow_cart.dwt" />
+        <option value="$PROJECT_DIR$/slb_manager/article.php" />
+        <option value="$PROJECT_DIR$/includes/lib_transaction.php" />
+        <option value="$PROJECT_DIR$/languages/zh_cn/shopping_flow.php" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/index.dwt" />
+        <option value="$PROJECT_DIR$/mobile/themes/default/user_order_list.dwt" />
+        <option value="$PROJECT_DIR$/mobile/include/apps/default/controller/UserController.class.php" />
+        <option value="$PROJECT_DIR$/slb_manager/order.php" />
+        <option value="$PROJECT_DIR$/data/order_print.html" />
+        <option value="$PROJECT_DIR$/api.php" />
+        <option value="$PROJECT_DIR$/js/echarts-all.js" />
+        <option value="$PROJECT_DIR$/themes/solaibao/flow.dwt" />
+        <option value="$PROJECT_DIR$/catalog.php" />
+        <option value="$PROJECT_DIR$/flow.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="47" />
+    <option name="y" value="24" />
+    <option name="width" value="1873" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Code SmellPHP</id>
+          </State>
+          <State>
+            <id>Code StylePHP</id>
+          </State>
+          <State>
+            <id>Control FlowPHP</id>
+          </State>
+          <State>
+            <id>Data flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>GeneralPHP</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+          <State>
+            <id>PHPDocPHP</id>
+          </State>
+          <State>
+            <id>Probable bugsPHP</id>
+          </State>
+          <State>
+            <id>Type compatibilityPHP</id>
+          </State>
+          <State>
+            <id>UndefinedPHP</id>
+          </State>
+          <State>
+            <id>UnusedPHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>JavaScript</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="添加" />
+    <OptionsSetting value="true" id="移除" />
+    <OptionsSetting value="true" id="签出" />
+    <OptionsSetting value="true" id="更新" />
+    <OptionsSetting value="true" id="状态" />
+    <OptionsSetting value="true" id="编辑" />
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="solaibao" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="ColorIdeProjectViewPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="DefaultHtmlFileTemplate" value="XHTML File" />
+    <property name="SearchEverywhereHistoryKey" value="order&#9;FILE&#9;file:///home/yuan/solaibao/slb_manager/order.php" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
+    <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="Y:\solaibao\code\mobile\include\apps\default\controller" />
+      <recent name="Y:\solaibao\code\mobile\include" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes" />
+      <recent name="$PROJECT_DIR$/slb_supplier/templates" />
+      <recent name="$PROJECT_DIR$/slb_manager/js" />
+      <recent name="$PROJECT_DIR$/mobile/include/apps/default/controller" />
+      <recent name="$PROJECT_DIR$/mobile/themes/default" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.solaibao">
+    <configuration default="false" name="solaibao" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner directory="$PROJECT_DIR$" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="PHPUnit.solaibao" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.solaibao" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9f59a1cc-5dfd-46f1-82d4-b8a88112fe5c" name="Default" comment="" />
+      <created>1457156257656</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1457156257656</updated>
+      <workItem from="1459126476540" duration="18118000" />
+      <workItem from="1459212273181" duration="11906000" />
+      <workItem from="1459299059818" duration="15395000" />
+      <workItem from="1459386183862" duration="24238000" />
+      <workItem from="1459471940549" duration="21907000" />
+      <workItem from="1459557677279" duration="17833000" />
+      <workItem from="1459817063377" duration="11681000" />
+      <workItem from="1463808812149" duration="636000" />
+      <workItem from="1463809482076" duration="1144000" />
+      <workItem from="1463811832804" duration="7191000" />
+      <workItem from="1463881237702" duration="19057000" />
+      <workItem from="1463964593129" duration="24016000" />
+      <workItem from="1464051284938" duration="19791000" />
+      <workItem from="1464137876816" duration="8620000" />
+      <workItem from="1464152791530" duration="5422000" />
+      <workItem from="1464223079271" duration="9460000" />
+      <workItem from="1464313959586" duration="14347000" />
+      <workItem from="1464395627778" duration="20298000" />
+      <workItem from="1464742829805" duration="12082000" />
+      <workItem from="1464829020034" duration="3929000" />
+      <workItem from="1464834180637" duration="823000" />
+      <workItem from="1464835215208" duration="183000" />
+      <workItem from="1464835425579" duration="2413000" />
+      <workItem from="1464916622842" duration="1777000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="272267000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="47" y="24" width="1873" height="1056" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15750134" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281893" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13934864" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1334757" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6582809" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42033544" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/slb_supplier/templates/goods_list.htm</url>
+          <line>15</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/themes/dianpu/mall.dwt</url>
+          <line>17</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/slb_manager/flashplay.php</url>
+          <line>255</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/slb_manager/flashplay.php</url>
+          <line>273</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="65" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_supplier">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_supplier_shop_config">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/supplier.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="157" column="44" selection-start-line="157" selection-start-column="44" selection-end-line="157" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/templates/supplier_info.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="271" column="12" selection-start-line="271" selection-start-column="12" selection-end-line="271" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_insert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/includes/lib_main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="724" column="9" selection-start-line="724" selection-start-column="9" selection-end-line="724" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/navigator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="360" column="50" selection-start-line="360" selection-start-column="50" selection-end-line="360" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/goods.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="127" column="44" selection-start-line="127" selection-start-column="44" selection-end-line="127" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/goods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="177" column="50" selection-start-line="177" selection-start-column="50" selection-end-line="177" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/library/recommend_best.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/library/recommend_hot.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/library/recommend_new.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/library/recommend_promotion.lbi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/index.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="35" column="93" selection-start-line="35" selection-start-column="93" selection-end-line="35" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="237" column="20" selection-start-line="237" selection-start-column="20" selection-end-line="237" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themes/default/flow_cart.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themes/default/flow.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="1824" column="19" selection-start-line="1824" selection-start-column="19" selection-end-line="1824" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="849" column="95" selection-start-line="849" selection-start-column="95" selection-end-line="849" selection-end-column="113" />
+          <folding>
+            <element signature="n#addto_cart#0;n#!!top" expanded="false" />
+            <element signature="n#get_cart_goods#0;n#!!top" expanded="false" />
+            <marker date="1464420392289" expanded="true" signature="943:1079" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('shipping')}" />
+            <marker date="1464420392289" expanded="true" signature="5520:5628" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('payment')}" />
+            <marker date="1464420392289" expanded="true" signature="7596:7610" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('pack')}" />
+            <marker date="1464420392289" expanded="true" signature="8089:8180" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('pack')}" />
+            <marker date="1464420392289" expanded="true" signature="8661:8675" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('card')}" />
+            <marker date="1464420392289" expanded="true" signature="9154:9245" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('card')}" />
+            <marker date="1464420392289" expanded="true" signature="20458:20638" placeholder="SELECT count... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="34073:34323" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="34721:34879" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="35120:35406" placeholder="SELECT count... ${$GLOBALS['ecs']-&gt;table('package_goods')}" />
+            <marker date="1464420392289" expanded="true" signature="38906:39075" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="39691:39785" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('products')}" />
+            <marker date="1464420392289" expanded="true" signature="44956:45312" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="45350:45696" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="48091:48195" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="48418:48550" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="48580:48733" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="48903:48997" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="50150:50242" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('users')}" />
+            <marker date="1464420392289" expanded="true" signature="51081:51180" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('user_address')}" />
+            <marker date="1464420392289" expanded="true" signature="51356:51461" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('user_address')}" />
+            <marker date="1464420392289" expanded="true" signature="53072:53178" placeholder="SELECT order... ${$GLOBALS['ecs']-&gt;table('user_bonus')}" />
+            <marker date="1464420392289" expanded="true" signature="59320:59408" placeholder="SELECT attr_... ${$GLOBALS['ecs']-&gt;table('goods_attr')}" />
+            <marker date="1464420392289" expanded="true" signature="59895:59998" placeholder="SELECT `good... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464420392289" expanded="true" signature="60917:60931" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('goods_storeroom')}" />
+            <marker date="1464420392289" expanded="true" signature="61126:61211" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464420392289" expanded="true" signature="61562:61652" placeholder="SELECT store... ${$GLOBALS['ecs']-&gt;table('goods_storeroom')}" />
+            <marker date="1464420392289" expanded="true" signature="61724:61815" placeholder="SELECT store... ${$GLOBALS['ecs']-&gt;table('goods_storeroom')}" />
+            <marker date="1464420392289" expanded="true" signature="65004:65092" placeholder="SELECT attr_... ${$GLOBALS['ecs']-&gt;table('goods_attr')}" />
+            <marker date="1464420392289" expanded="true" signature="65579:65682" placeholder="SELECT `good... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464420392289" expanded="true" signature="66601:66615" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('goods_storeroom')}" />
+            <marker date="1464420392289" expanded="true" signature="67743:67930" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="67971:68098" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('order_goods')}" />
+            <marker date="1464420392289" expanded="true" signature="79969:80053" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="80192:80273" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="82125:82213" placeholder="select provi... ${$GLOBALS['ecs']-&gt;table('order_info')}" />
+            <marker date="1464420392289" expanded="true" signature="82276:82398" placeholder="select store... ${$GLOBALS['ecs']-&gt;table('goods_storeroom')}" />
+            <marker date="1464420392289" expanded="true" signature="82533:82770" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('order_goods')}" />
+            <marker date="1464420392289" expanded="true" signature="82826:83064" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('order_goods')}" />
+            <marker date="1464420392289" expanded="true" signature="85514:85614" placeholder="select goods... ${$GLOBALS['ecs']-&gt;table('products')}" />
+            <marker date="1464420392289" expanded="true" signature="87475:87494" placeholder="SELECT pay_i... ${$GLOBALS['ecs']-&gt;table('payment')}" />
+            <marker date="1464420392289" expanded="true" signature="98631:98781" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('user_bonus')}... " />
+            <marker date="1464420392289" expanded="true" signature="100204:100421" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="107548:107837" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464420392289" expanded="true" signature="108827:108931" placeholder="DELETE FROM " />
+            <marker date="1464420392289" expanded="true" signature="109317:109476" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('package_goods')}" />
+            <marker date="1464420392289" expanded="true" signature="109974:110367" placeholder="SELECT p.pro... ${$GLOBALS['ecs']-&gt;table('products')}" />
+            <marker date="1464420392289" expanded="true" signature="110568:110954" placeholder="SELECT g.goo... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_order_info">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_transaction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="1440" column="45" selection-start-line="1440" selection-start-column="45" selection-end-line="1440" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_goods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/languages/zh_cn/shopping_flow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/include/apps/default/controller/UserController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themes/default/index.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="136" column="19" selection-start-line="136" selection-start-column="19" selection-end-line="136" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themes/default/user_order_list.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/themes/default/comment_info.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="174" selection-start-line="18" selection-start-column="167" selection-end-line="18" selection-end-column="174" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/templates/order_operate.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/templates/order_operate_info.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_cart">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_order_goods">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/sqldata/index.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="454">
+          <caret line="280" column="1" selection-start-line="280" selection-start-column="1" selection-end-line="280" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/lib_common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="602">
+          <caret line="286" column="58" selection-start-line="286" selection-start-column="58" selection-end-line="286" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/9a827695/1d925385-186a-45c7-930f-da7fffaeb6d7/ecshop.slb_shop_config">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/order_print.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/order.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="3057" column="57" selection-start-line="3057" selection-start-column="57" selection-end-line="3057" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/ueditor/third-party/codemirror/codemirror.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="138" column="48" selection-start-line="138" selection-start-column="48" selection-end-line="138" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/ueditor/third-party/highcharts/modules/canvas-tools.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="30" column="69" selection-start-line="30" selection-start-column="69" selection-end-line="30" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/slb_manager/templates/start.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="166" column="39" selection-start-line="166" selection-start-column="39" selection-end-line="166" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/animated_favicon.gif" />
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-446">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/echarts-all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-756">
+          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/activity.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/solaibao/flow.dwt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="641" column="34" selection-start-line="641" selection-start-column="34" selection-end-line="641" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ecmoban_qq/ServiceQQ.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catalog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="4" column="79" selection-start-line="4" selection-start-column="79" selection-end-line="4" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flow.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="515" column="75" selection-start-line="515" selection-start-column="68" selection-end-line="515" selection-end-column="75" />
+          <folding>
+            <marker date="1464835313996" expanded="true" signature="10523:10640" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="12543:12628" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="20030:20098" placeholder="SELECT is_gi... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="20750:20903" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="23375:23544" placeholder="SELECT count... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="48541:48719" placeholder="SELECT COUNT... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="55324:55439" placeholder="SELECT shipp... ${$ecs-&gt;table('shipping')}" />
+            <marker date="1464835313996" expanded="true" signature="60122:60775" placeholder="INSERT INTO ${$ecs-&gt;table('order_goods')}... " />
+            <marker date="1464835313996" expanded="true" signature="60405:60697" placeholder="SELECT '${$n... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="62887:63142" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="69710:69790" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464835313996" expanded="true" signature="69896:69995" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="70272:70379" placeholder="SELECT goods... ${$ecs-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="70414:70535" placeholder="SELECT goods... ${$ecs-&gt;table('collect_goods')}" />
+            <marker date="1464835313996" expanded="true" signature="70626:70789" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('collect_goods')}... " />
+            <marker date="1464835313996" expanded="true" signature="80727:80888" placeholder="SELECT produ... ${$GLOBALS['ecs']-&gt;table('products')}" />
+            <marker date="1464835313996" expanded="true" signature="81727:82105" placeholder="SELECT b.goo... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="82480:82692" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="83865:84069" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="84152:84267" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="84354:84456" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="85898:86057" placeholder="SELECT produ... ${$GLOBALS['ecs']-&gt;table('products')}" />
+            <marker date="1464835313996" expanded="true" signature="86902:86973" placeholder="SELECT * FRO... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="87138:87306" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="87488:88003" placeholder="SELECT c.rec... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="88325:88543" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="88628:88796" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="89029:89492" placeholder="SELECT c.rec... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="89763:89940" placeholder="SELECT DISTI... ${$GLOBALS['ecs']-&gt;table('cart')}" />
+            <marker date="1464835313996" expanded="true" signature="90590:90728" placeholder="DELETE FROM " />
+            <marker date="1464835313996" expanded="true" signature="92656:92753" placeholder="SELECT COUNT... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464835313996" expanded="true" signature="94214:94308" placeholder="SELECT brand... ${$GLOBALS['ecs']-&gt;table('brand')}" />
+            <marker date="1464835313996" expanded="true" signature="94494:94587" placeholder="SELECT cat_n... ${$GLOBALS['ecs']-&gt;table('category')}" />
+            <marker date="1464835313996" expanded="true" signature="94770:94864" placeholder="SELECT goods... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464835313996" expanded="true" signature="96283:96833" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('cart')}... " />
+            <marker date="1464835313996" expanded="true" signature="96542:96833" placeholder="SELECT '${$_... ${$GLOBALS['ecs']-&gt;table('goods')}" />
+            <marker date="1464835313996" expanded="true" signature="97091:97519" placeholder="INSERT INTO ${$GLOBALS['ecs']-&gt;table('cart')}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,107 @@
+<form action="{:url('flow/consignee')}" method="post" name="theForm" id="theForm" onSubmit="return checkConsignee(this)">
+<div class="ect-bg-colorf flow-consignee">
+  <ul>
+    <li>
+      <div class="input-text"><b class="pull-left">{$lang.consignee_name}：</b><span>
+        <input name="consignee" type="text" class="inputBg" id="consignee_{$sn}" value="{$consignee.consignee|escape}">
+
+        </span></div>
+    </li>
+     {* by yang*}
+     <li>
+      <div class="input-text"><b class="pull-left">身份证号码：</b><span>
+        <input name="id_card" type="text"  class="inputBg"  id="id_card_{$sn}" value="{$consignee.id_card|escape}">
+        </span>
+      </div>
+      </li>
+     
+    <p style="color: red;font-size:15px;" >
+    因您选购的商品涉及入境清关，根据海关规定，需要您完善当前收货人身份证信息，收货人请使用和身份证号对应的真实姓名,搜来宝承诺严格保密您的个人信息。
+    </p>
+    {*yang*}
+    <li>
+      <div class="input-text"><b class="pull-left">{$lang.mobile}：</b><span>
+        <input name="mobile" type="text" class="inputBg"  id="mobile_{$sn}" value="{$consignee.mobile|escape}">
+        </span></div>
+    </li>
+    <!-- {if $real_goods_count gt 0} --> 
+    <!-- 购物车中存在实体商品显示国家和地区 -->
+    <li>
+      <div class="form-select"> <i class="fa fa-sort"></i>
+        <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')">
+          <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+          <!-- {foreach from=$country_list item=country} -->
+          <option value="{$country.region_id}"{if $country.region_id eq '1'} selected{/if}>{$country.region_name}</option>
+          <!-- {/foreach} -->
+        </select>
+      </div>
+      <div class="form-select"> <i class="fa fa-sort"></i>
+        <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')">
+          <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+          <!-- {foreach from=$province_list item=province} -->
+          <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+          <!-- {/foreach} -->
+        </select>
+      </div>
+      <div class="form-select"> <i class="fa fa-sort"></i>
+        <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+          <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+          <!-- {foreach from=$city_list.$sn item=city} -->
+          <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+          <!-- {/foreach} -->
+        </select>
+      </div>
+      <div class="form-select"> <i class="fa fa-sort"></i>
+        <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if}>
+          <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+          <!-- {foreach from=$district_list.$sn item=district} -->
+          <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+          <!-- {/foreach} -->
+        </select
+          >
+      </div>
+    </li>
+    <!-- {/if} --> 
+    <!-- {if $real_goods_count gt 0} --> 
+    <!-- 购物车中存在实体商品显示详细地址 -->
+    <li class="input-text"><b class="pull-left">{$lang.detailed_address}：</b>
+      <textarea name="address"  id="address_{$sn}">{$consignee.address|escape}</textarea>
+    </li>
+    <!-- {/if} -->
+  </ul>
+</div>
+<div class="two-btn ect-padding-tb ect-padding-lr ect-margin-tb text-center"> 
+  <!-- {if $smarty.session.user_id gt 0 and $consignee.address_id gt 0} --> 
+  <!-- 如果登录了，显示删除按钮 --> 
+  <a  class="btn btn-info"  onclick="if (confirm('{$lang.drop_consignee_confirm}')) location.href='{:url('flow/drop_consignee',array('id'=>$this->_var['consignee']['address_id']))}'" >{$lang.drop}</a>
+  <!-- {/if} -->
+  <button type="submit" class="btn btn-info ect-bg-colory" name="Submit">{$lang.shipping_address}</button>
+</div>
+<input type="hidden" name="step" value="consignee" />
+<input type="hidden" name="act" value="checkout" />
+<input name="address_id" type="hidden" value="{$consignee.address_id}" />
+</form>
+{*by yangxiaohui*}
+<script type="text/javascript">
+    var IDCARD=false;
+    $("form").submit(function(){
+      $("input").trigger('blur');
+      if(IDCARD){
+          return true;
+      }else{
+     
+       return false;
+      }
+    });
+    $("input[name='id_card']").blur(function(){
+      var reg=/^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+      var id_card=$(this).val();
+      var res=reg.test(id_card);
+      if(res){
+         IDCARD=true; 
+      }else{
+        alert('请正确填写身份证号码');
+        return false;
+      }
+    });
+</script>

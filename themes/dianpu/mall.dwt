@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+<link href="themes/{$template_dir}/images/ghs/css/customer.css" rel="stylesheet" type="text/css">
+
+{* 包含脚本文件 *}
+<script type="text/javascript">window.pageConfig = { compatible: true }; </script>
+{insert_scripts files='common.js'}
+{insert_scripts files='jquery-1.11.3.min.js,jquery.json.js,transport.js'}
+<script type="text/javascript" src="data/flashdata/{$flash_theme}/data.js"></script>
+<style>
+html { 
+overflow-x:hidden; /*隐藏水平滚动条*/
+} 
+.center img{
+	margin:0 auto;/*顶部banner居中*/
+	}
+.con_bg .con_bg_col{
+	background-size:100%;/*背景图铺满*/
+	-moz-background-size:100%;}
+	
+.ghs_body{
+	position:relative;
+	}
+
+</style>
+</head>
+<body>
+<div role="navigation" id="site-nav" data-spm="a2226mz">
+    <div style="max-width: 2000px;text-align: center;" class="center">       
+            {$shopheader}
+    </div>
+
+	<!-- #BeginLibraryItem "/library/page_header2.lbi" --><!-- #EndLibraryItem -->
+	<link href="themes/{$template_dir}/images/ghs/css/ghs_style.css" rel="stylesheet" type="text/css" />
+    <!-- #BeginLibraryItem "/library/ghs_nav_index.lbi" --><!-- #EndLibraryItem -->
+    
+    <!-- BeginLibraryItem "/library/ghs_category.lbi" --><!-- EndLibraryItem --> <!--注释 bu yuanzb 2016-3-31 09:36:23-->
+    <div class="ghs_body" style="z-index:0;">
+	<!-- #BeginLibraryItem "/library/ghs_ad2.lbi" --><!-- #EndLibraryItem -->
+	</div>
+	<div class="blank"></div>
+	<div class="con_bg">
+	<div class="con_bg_col">
+	<div class="ghs_content" style="padding-top:30px;">
+	
+	<div class="ghs_right" style="width:1200px;">
+
+	<!-- #BeginLibraryItem "/library/recommend_new.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem -->
+	<!-- #BeginLibraryItem "/library/category_goods.lbi" --><!-- #EndLibraryItem -->
+	</div>
+	<div style="height:0px; line-height:0px; clear:both;"></div>
+	</div>
+	</div>
+	</div>
+	<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+
+	
+</div>
+</body>
+</html>

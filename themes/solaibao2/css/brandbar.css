@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+.ui-brand-btn, .ui-brand-btn * {
+    transition: all 0.2s ease-in 0s;
+}
+.ui-brand-btn {
+    background: none repeat scroll 0 0 #c00;
+    border-radius: 11px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    height: 22px;
+    line-height: 22px;
+    outline: 0 none;
+    position: relative;
+    text-align: center;
+    text-decoration: none !important;
+    white-space: nowrap;
+    width: 75px;
+}
+.ui-brand-btn:hover {
+    background: none repeat scroll 0 0 #a60000;
+}
+.ui-brand-btn i {
+    background: url("../images/store/T1F05SXB4cXXcGdY6f-38-12.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 12px;
+    line-height: 12px;
+    margin: 0 0 -2px;
+    overflow: hidden;
+    transition: none 0s ease 0s ;
+    width: 12px;
+}
+.ui-brand-btn span {
+    margin-left: 4px;
+}
+.ui-brand-collected {
+    background: none repeat scroll 0 0 #f2f2f2;
+    color: #999;
+}
+.ui-brand-collected:hover {
+    background: none repeat scroll 0 0 #d9d9d9;
+    color: #828282;
+}
+.ui-brand-btn-ex-s {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.ui-brand-btn-ex-s i {
+    background-position: -13px 0;
+}
+.ui-brand-collected i {
+    background-position: -26px 0;
+}
+.ui-brand-btn-ex-s span {
+    display: none;
+}
+.ui-brand-btn-ex-bubble:hover {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.ui-brand-btn-ex-bubble span {
+    border-radius: 2px;
+    display: inline-block;
+    height: 21px;
+    left: 50%;
+    margin-left: -35px;
+    opacity: 0;
+    position: absolute;
+    top: -23px;
+    width: 70px;
+}
+.ui-brand-btn-ex-bubble:hover span {
+    background: none repeat scroll 0 0 #c00;
+    opacity: 1;
+}
+.ui-brand-btn-ex-bubble.ui-brand-collected:hover span {
+    background: none repeat scroll 0 0 #d9d9d9;
+    color: #999;
+}
+.ui-brand-btn-ex-bubble b {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px;
+    height: 0;
+    left: 50%;
+    line-height: 0;
+    margin-left: -5px;
+    position: absolute;
+    top: -2px;
+    width: 0;
+}
+.ui-brand-btn-ex-bubble:hover b {
+    border-top-color: #c00;
+}
+.ui-brand-btn-ex-bubble.ui-brand-collected:hover b {
+    border-top-color: #d9d9d9;
+}
+.ui-brand-btn-ex-align-icon {
+    padding-left: 18px;
+    text-align: left;
+    width: 57px;
+}
+.ui-brand-btn-ex-align-icon:hover span {
+    display: inline-block;
+}
+.ui-brand-btn-ex-align-left {
+    float: left;
+    overflow: hidden;
+    padding-left: 5px;
+    text-align: left;
+    width: 17px;
+}
+.ui-brand-btn-ex-align-left:hover {
+    padding-left: 18px;
+    width: 57px;
+}
+.ui-brand-btn-ex-align-left span {
+    display: none;
+}
+.ui-brand-btn-ex-align-left:hover span {
+    display: inline-block;
+}
+.ui-brand-btn-ex-align-right {
+    float: right;
+    overflow: hidden;
+    text-align: center;
+    width: 22px;
+}
+.ui-brand-btn-ex-align-right:hover {
+    text-align: center;
+    width: 75px;
+}
+.ui-brand-btn-ex-align-right span {
+    display: none;
+}
+.ui-brand-btn-ex-align-right:hover span {
+    display: inline-block;
+}
+.ui-brand-num {
+    text-align: center;
+}
+.ui-brand-num em {
+    font-style: normal;
+    font-weight: 700;
+}
+

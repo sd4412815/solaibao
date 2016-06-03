@@ -1,0 +1,1030 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='transport_jquery.js,common.js,user.js'}
+<style type="text/css">
+textarea{ resize:none;
+width:99.5%;
+min-width:640px;
+}
+
+.boxCenterList{
+
+}
+  .aa{
+	  padding-bottom:400px;
+  }
+.cla{
+      border:1px solid #ccc;
+      width:100%; 
+	  height:30px;
+	  background: #fff; 
+	  font-size:14px;
+}
+.clb{
+  border:2px solid #e95466;
+  color:#e95466;
+  font-weight:bold;
+}
+input,button,select,textarea{outline:none;}
+input[type="checkbox"] {
+                  -webkit-appearance: none;
+                  background: #fff url(i/blue.png);
+                  height: 22px;
+                  /*vertical-align: middle;*/
+                  width: 50px;
+                }
+				
+.star_1 li {
+		list-style:none; 
+		height: 20px;
+		width: 20px;
+		background-color: #CCC;
+		margin-right: 5px;
+}
+
+.hgb{
+	  width:900px; 
+	  height:200px;
+	  float:right;
+	  position:relative;
+ }
+.hgb .pagebar{
+	position:absolute;
+	bottom:0;
+	right:0;}
+.msgBottomBorder{
+	 height:290px;
+	 padding:15px; 
+	 border:2px solid #ccc;
+	}
+.pingjia{
+	 padding: 0;
+	 padding-left:20px;
+	 width:120px;
+	 height:20px;
+	 }
+.xuanping{
+	width:730px;
+	height:40px;
+	border:1px solid #eee; 
+	background: rgb(224,224,224); 
+	margin-left:100px; 
+	margin-top:50px;
+	}
+.xieping{
+	border:1px solid #ccc; 
+	border-top:0px; 
+	margin-top:0px; 
+	margin-left:100px;
+	width:730px;
+	padding:0;
+	}
+.bttn{
+	margin-right:135px;
+	margin-top:-22px;
+	}
+.pinglun{
+	width:600px; 
+	height:100px; 
+	float:left;
+	}
+.div_1{
+		height:180px; margin:0px;
+}
+.current{
+	display:none;
+}
+.xiaoshi{
+	border:none;}
+.gonggao{
+
+	position:relative;
+	height:16px;
+	overflow:hidden;
+	padding-left:60px;
+	}
+.small{
+	position:absolute;
+	}
+.gonggao p{
+	display:block;
+	color:#e95466;
+	}
+.gonggao p a{
+	display:block;
+	color:#e95466;
+	}
+.gonggao p a:hover{
+	text-decoration:underline;
+	}
+.clearfix{
+	clear:both;}
+</style>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+<div class="block clearfix">
+  <!--left start-->
+  <div class="AreaL">
+    <div class="box">
+     <div class="box_1">
+      <div class="userCenterBox">
+        <!-- #BeginLibraryItem "/library/user_menu.lbi" --><!-- #EndLibraryItem -->
+      </div>
+     </div>
+    </div>
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="AreaR">
+    <div class="box">
+     <div class="box_1">
+      <div id="y_box" class="userCenterBox boxCenterList clearfix" style="_height:1%;">
+         <!-- *用户中心默认显示页面 start-->
+         <!-- {if $action eq 'default'} -->
+          <div class="zy_center">
+              <div class="left_person">
+                  <a  href="user.php?act=profile" title="修改我的头像">
+                  <img src="{if $info.avatar}{$info.avatar}{else}images/avatar.gif{/if}">
+                  </a>
+              </div>
+              <div class="right_person" >
+                  <span>您好，{if $status eq 0}{$lang.member}{else}{$lang.manager}{/if} <strong class="text-pink">{$info.username}</strong> ，欢迎回来！</span><br />
+                  <div class="blank"></div>
+                  {$rank_name} {$next_rank_name} &nbsp;&nbsp;<a href="user.php?act=profile" class="text-pink">完善个人信息</a><br />
+                  <div class="blank"></div>
+                  <div class="blank"></div>
+                  <div class="blank"></div>
+                  {$lang.last_time}: {$info.last_time}<br />
+			  </div>
+
+              <div class="small_box" style="width:150px;">
+                  <strong>{$lang.your_account}</strong>
+                  <div class="blank"></div>                            
+                  <div style="margin-bottom:4px"><img src="images/jifen.png" style="width:60px; height:60px"></div>
+                  <!-- {if $info.credit_line gt 0} 如果有信用额度 -->
+                  {$lang.credit_line}：{$info.formated_credit_line}<br />
+                  <!-- {/if} -->
+                  {$info.integral_name}： {$info.integral} <br />
+              </div>
+              <div class="small_box" style="width:150px;">
+                  <strong  style="visibility:hidden;">{$lang.your_account}</strong>
+                  <div class="blank"></div>
+                  <div style="margin-bottom:4px"><img src="images/hongbao.png" style="width:60px; height:60px;"></div>
+                  红包：{$info.bonus}
+              </div>
+              
+              <div class="big_box" style="width:150px;">
+                  <strong style="visibility:hidden;">{$lang.your_account}</strong>
+                  <div class="blank"></div>
+                  <div style="margin-bottom:4px"><img src="images/yue.png" style="width:60px; height:60px;"></div>
+                  {$lang.your_surplus}：{$info.surplus} &nbsp;&nbsp;<br/>
+                  <a href="user.php?act=account_log" class="person_btn">去充值</a><br />
+              </div>
+              <div class="clean"></div>
+          </div>
+          <div class="blank5"></div>
+          <hr style="height:1px;border:none;border-top:1px solid #ccc;" />
+         	<span style="position:absolute;">最新公告：</span>
+          <div class="gonggao">
+          	<div class="small">
+                <p><a href="article_cat.php?id=12">{$user_notice} </a></p>
+                <p><a href="article_cat.php?id=12">{$user_notice} </a></p>
+            </div>    
+          </div>
+          <script>
+		  	//$(".small").width($(".small p").length*930);
+			
+			var n = 0;
+			var p = $(".small p").length;
+			//alert(p)
+			function run(){
+				if(n<$("small p").length){
+					n=n+1;
+					}else{
+						$(".small").css("margin-top","0")
+						n=1;
+						}
+				$(".small").animate({marginTop:-18*n},1500);
+				
+			}
+			var t = setInterval(run,3000);
+			$(".small").mouseenter(
+				function(){
+					clearInterval(t);
+					}
+			)
+			$(".small").mouseleave(
+				function(){
+					t = setInterval(run,3000);
+					}
+			)
+		
+		  </script>
+        <div style="width:100%; text-align: center;margin-top:10px;">
+          <b style="font-size: 18px; color:#666; ">根据您的需求，精心为您准备以下商品</b>
+        </div>
+          <div style="width:100%; height:50%; margin-top:5px; ">
+            <!-- {foreach from=$click_count item=click} -->
+            <div style="float:left; width:23.7%; height:187px; border:1px solid #ddd; margin:4px; text-align: center;">
+              <a href="goods.php?id={$click.goods_id}">{if empty($click.goods_thumb)}<img src="./images/no_picture.png" alt="" style="width:130px;height:120px; " />{else}<img src="{$click.goods_thumb}" alt="" style="width:130px;height:120px; " />{/if}</a>
+              <dd>
+                  <dl style="text-align:left;">
+                   商品: <a href="goods.php?id={$click.goods_id}">{if strlen($click.goods_name) gt 8}{$click.goods_name|truncate:8:"...":true}{else}{$click.goods_name}{/if}</a>
+                  </dl>
+                  <dl style="text-align:left;">
+                    市价:<del>￥{$click.market_price} 元</del>
+                  </dl>
+                  <dl style="text-align:left; ">
+                    本店惊爆价: <b style="font-size:21px; color:#e95466;">￥{$click.shop_price} </b>
+                  </dl>
+              </dd>
+            </div>
+              
+           <!-- {/foreach} -->
+          </div>
+        
+         <!-- {/if} -->
+         <!-- #用户中心默认显示页面 end-->
+         <!-- *我的留言 start-->
+         <!-- {if $action eq 'message_list'} -->
+          <h5><span>{$lang.label_message}</span>
+              
+          </h5>
+
+          <div class="blank"></div>
+           <!--{foreach from=$message_list item=message key=key} -->
+          <div class="f_l">
+          <b>{$message.msg_type}:</b>&nbsp;&nbsp;<font class="f4">{$message.msg_title}</font> ({$message.msg_time})
+          </div>
+          <div class="f_r">
+          <a href="user.php?act=del_msg&amp;id={$key}&amp;order_id={$message.order_id}" title="{$lang.drop}" onclick="if (!confirm('{$lang.confirm_remove_msg}')) return false;" class="f6">{$lang.drop}</a>
+          </div>
+          <div class="msgBottomBorder">
+          {$message.msg_content}
+           <!-- {if $message.message_img} 如果上传了图片-->
+           <div align="right">
+           <a href="data/feedbackimg/{$message.message_img}" target="_bank" class="f6">{$lang.view_upload_file}</a>
+           </div>
+           <!-- {/if} -->
+           <br />
+           <!-- {if $message.re_msg_content} -->
+           <a href="mailto:{$message.re_user_email}" class="f6">{$lang.shopman_reply}</a> ({$message.re_msg_time})<br />
+           {$message.re_msg_content}
+           <!-- {/if} -->
+          </div>
+          <!-- {/foreach} -->
+          <!-- {if $message_list}-->
+          <div class="f_r">
+          <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+          </div>
+          <!-- {/if}-->
+          <!--yuzhengbo -->
+          <!--<div class="blank"></div>
+          <form action="user.php" method="post" enctype="multipart/form-data" name="formMsg" onSubmit="return submitMsg()">
+                  <table width="100%" border="0" cellpadding="3">
+                    {if $order_info}
+                    <tr>
+                      <td align="right">{$lang.order_number}</td>
+                      <td>
+                      <a href ="{$order_info.url}"><img src="images/note.gif" />{$order_info.order_sn}</a>
+                      <input name="msg_type" type="hidden" value="5" />
+                      <input name="order_id" type="hidden" value="{$order_info.order_id}" class="inputBg" />
+                      </td>
+                    </tr>
+                    {else}
+                    <tr>
+                      <td align="right">{$lang.message_type}：</td>
+                      <td><input name="msg_type" type="radio" value="0" checked="checked" />
+                        {$lang.type[0]}
+                        <input type="radio" name="msg_type" value="1" />
+                        {$lang.type[1]}
+                        <input type="radio" name="msg_type" value="2" />
+                        {$lang.type[2]}
+                        <input type="radio" name="msg_type" value="3" />
+                        {$lang.type[3]}
+                        <input type="radio" name="msg_type" value="4" />
+                        {$lang.type[4]} </td>
+                    </tr>
+                    {/if}
+                    <tr>
+                      <td align="right">{$lang.message_title}：</td>
+                      <td><input name="msg_title" type="text" size="30" class="inputBg" /></td>
+                    </tr>
+                    <tr>
+                      <td align="right" valign="top">{$lang.message_content}：</td>
+                      <td><textarea name="msg_content" cols="50" rows="4" wrap="virtual" class="B_blue"></textarea></td>
+                    </tr>
+                    <tr>
+                      <td align="right">{$lang.upload_img}：</td>
+                      <td><input type="file" name="message_img"  size="45"  class="inputBg" /></td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td><input type="hidden" name="act" value="act_add_message" />
+                        <input type="submit" value="{$lang.submit}" class="bnt_bonus" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>&nbsp;</td>
+                      <td>
+                      {$lang.img_type_tips}<br />
+                      {$lang.img_type_list}
+                      </td>
+                    </tr>
+                  </table>
+                </form> -->
+         <!-- {/if} -->
+         <!--#我的留言 end-->
+         <!-- *我的评论 start-->
+
+          <!-- {if $action eq 'comment_list'} -->
+ <!--  #YWT_增加代码部分 -->
+          {insert_scripts files='jquery.js'}
+          <script>
+              $(function(){ 
+              $(".star_1 li").mouseenter(function(){
+               $(".star_1 li").css("background","#f60");
+               $(this).css("background","#f60");
+               $(this).nextAll().css("background","#ccc");
+               })
+              });
+          </script>
+      
+          <h5>
+          <!--<a href="user.php?act=comment_list"><span>{$lang.label_comment}</span></a>-->
+              <a href="user.php?act=comment_list&status=3"><span>未评论</span></a>
+              <a href="user.php?act=comment_list&status=2"><span>已评论</span></a>
+          </h5>
+
+              <div class="blank"></div>
+            <!--{if $comment_list neq ''}-->
+              <!--{foreach from=$comment_list item=comment} -->
+             <b style="width:100px; height:30px;  float:left">订单号:</b>
+               <font class="f4" style="width:240px; height:30px;"> {$comment.order_sn}</font>
+            <div class="hgb">
+              <div class="f_l" style="width:150px; height:150px; margin-right:30px;" >
+                   <a href="goods.php?id={$comment.goods_id}"><img style="width:150px; height:150px; margin-right:30px;" src="{if $comment.goods_thumb eq ''}images/no_picture.png{else}{$comment.goods_thumb}{/if}"  /></a>
+              </div>
+              <div class="f_l">
+              
+              <b style="width:100px; height:50px;  float:left"> 商品名称 &nbsp;&nbsp;&nbsp;&nbsp;</b>
+               <a href="goods.php?id={$comment.goods_id}"><font class="f4" style="width:240px; height:50px; float:left; margin-right:60px;"> {$comment.goods_name} &nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;</a>
+               <div style="width:300px; height:50px; float:right">购买时间：({$comment.addtime})</div>
+              </div>
+              <div class="pinglun" id="pinglun" >{$comment.content|escape}</div>
+          <div class="f_r" >
+              <button class="bttn" id="btn">点击评价</button>
+          
+
+
+          </div>
+          <div class="blank" style="height:30px;"></div>
+          <div class="clearfix"></div>
+          <div class="div_1 current">
+          
+          <div class="blank"></div>
+          <div class="msgBottomBorder"><b>商品评论 </b>
+         
+            <form id="form" name="form" style="position:relative;">
+            <div class="div_2 " style=" width:300px; height:60px; margin-top:10px; float: left; position:relative;">
+            <div style=" width:50px; height:40px; padding-left:16px; padding-top:6px; position: absolute; left:0;"><i style="color:red">* </i>评分：</div>
+            
+           <script type="text/javascript">
+           $(function () {
+                var mark;
+                var span = $('.span').html(); 
+                $(".span")
+                    .css({ fontSize: "20px", color: "rgb(252,129,5)" })
+                    .mouseover(function () {
+                        $(this).text("★")
+                            .prevAll().text("★").end()
+                            .nextAll().text("☆").end()
+                            .click(function () {
+                                mark = $(this).attr("id");
+                                $('#mark').val(mark);
+                            });
+                    });
+                $("#div")
+                     .mouseout(function () {
+                         if (mark) {
+                             $("#" + mark)
+                                .text("★")
+                                .prevAll().text("★").end()
+                                .nextAll().text("☆");
+                         }
+                         else {
+                             $(".span").text("☆");
+                         }
+                     });
+                });
+
+    </script>
+          <div id="div" class="pingjia">
+            <span class="span" id="1">☆</span>
+            <span class="span" id="2">☆</span>
+            <span class="span" id="3">☆</span>
+            <span class="span" id="4">☆</span>
+            <span class="span" id="5">☆</span>
+          </div> 
+              <clear>
+              <div style=" width:50px; height:30px; padding-left:16px; float:left; padding-top:50px; position:absolute;"><i style="color:red">* </i>心得：</div>
+              <clear>
+              <div style="width:800px; height:250px; margin-left:0px;" class="bigxuan">
+              <div class="xuanping"> 
+                <div style="width:100px; height:20px; padding-left:30px; float:left; margin-top:5px;">
+                  <input type="button" value="东西不错" class="cla" />
+                </div> 
+                <div style="width:100px; height:20px; padding-left:10px; float:left; margin-top:5px;">
+                  <input type="button" value="很实惠" class="cla" />
+                </div> 
+                <div style="width:100px; height:20px; padding-left:10px; float:left; margin-top:5px;">
+                  <input type="button" value="非常好" class="cla" />
+                </div> 
+                <div style="width:100px; height:20px; padding-left:10px; float:left; margin-top:5px;">
+                  <input type="button" value="特别满意" class="cla" />
+                </div>
+                <div style="width:100px; height:20px; padding-left:10px; float:left; margin-top:5px;">
+                  <input type="button" value="物超所值" class="cla" />
+                </div>
+              </div>
+              
+              </form>
+              <script type="text/javascript">
+			
+				$(".cla").click(
+					function(){
+						$(".cla").removeClass("clb")
+						$(this).addClass("clb")
+						var n = $(this).val()
+						//$(this).parents(".xuanping").siblings(".neirong").children(".xieping").html(n);
+						$(this).parents(".bigxuan").find(".xieping").html(n);
+					}
+				)
+              
+            
+              </script>
+          <form action="user.php?act=comment_list&status=1&order_id={$comment.order_id}&goods_id={$comment.goods_id}" method="post" class="neirong">
+          <textarea id="area" class="xieping" name="content" rows="5" value="content" placeholder="商品是否给力？快分享你的购买心得吧~"></textarea><br /><br />
+          <center>
+          <input type="hidden" id="mark" name="mark" value="0" />
+          <input id="ipt" class="ipt" type="submit" value="发表评价" style="margin-left:38px; background: #ccc;"/>
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重新输入" style="background: #ccc;"/> 
+          </center>
+         
+          </form>
+          </div>
+          </div>
+          <!--{if $comment.reply_content}-->
+          <b>{$lang.reply_comment}：</b><br />
+          {$comment.reply_content}
+           <!--{/if}-->
+          </div>
+          </div>
+          <!-- {if $comment_list}-->
+
+          <!-- {else}-->
+          {$lang.no_comments}
+          <!-- {/if}-->
+          </div> 
+          
+          
+          <div class="blank"></div>
+          <!-- {/foreach} -->
+        <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+        <!--{else}-->
+        <p>暂无相关信息</p>
+        <!--{/if}-->
+
+         
+          
+
+          
+          </div>
+          </div>
+          
+		  <script type="text/javascript">
+		  $(document).ready(function(){
+				for(i=0;i<$(".pinglun").length; i++){
+  				 var a=$(".pinglun").eq(i).html();
+   					if(/^\s*?$/.test(a)){
+					$(".bttn").eq(i).html("点击评价")
+					}
+    				else{
+					$(".bttn").eq(i).attr("disabled","true")
+					$(".bttn").eq(i).html("已评价")
+					}}
+});
+		   function xieping(){
+			   for(var n=0; n<$(".xieping").length; n++){
+			   var b=$(".xieping").eq(n).html();
+				if(/^\s*?$/.test(b)){
+				   $(".xieping").eq(n).html("好评")
+				  }else{
+                  }
+               }
+			  }
+		  $(".bttn").toggle(
+		  	function(){
+                $(this).parents(".hgb").addClass("aa")
+                $(this).parent(".f_r").siblings(".div_1").removeClass("current")
+			},function(){
+                $(this).parents(".hgb").removeClass("aa")
+                $(this).parent(".f_r").siblings(".div_1").addClass("current")
+			}	
+		  )
+		  $(".hgb").find(".pagebar").hide();
+		  $(".hgb").find(".pagebar").last().show();
+          </script>
+          <!--{/if} -->
+  <div class="clearfix"></div>
+    <!--#YWT增加代码部分 end-->
+    
+</div>
+
+        <!--#我的评论 end-->
+    <!--#我的标签 start-->
+    <!--{if $action eq 'tag_list'} -->
+    <h5><span>{$lang.label_tag}</span></h5>
+    <div class="blank"></div>
+     <!-- {if $tags} -->
+    <!-- 标签云开始 {foreach from=$tags item=tag}-->
+    <a href="search.php?keywords={$tag.tag_words|escape:url}" class="f6">{$tag.tag_words|escape:html}</a> <a href="user.php?act=act_del_tag&amp;tag_words={$tag.tag_words|escape:url}" onclick="if (!confirm('{$lang.confirm_drop_tag}')) return false;" title="{$lang.drop}"><img src="images/drop.gif" alt="{$lang.drop}" /></a>&nbsp;&nbsp;
+    <!-- 标签云结束 {/foreach}-->
+    <!-- {else} -->
+    <span style="margin:2px 10px; font-size:14px; line-height:36px;">{$lang.no_tag}</span>
+    <!-- {/if} -->
+    <!--{/if} -->
+    <!--#我的标签 end-->
+
+
+    <!--*收藏商品列表页面 start-->
+    <!--{if $action eq 'collection_list'} -->
+    {insert_scripts files='transport_jquery.js,utils.js'}
+    <h5><span>{$lang.label_collection}</span></h5>
+    <div class="blank"></div>
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      <tr align="center">
+        <th width="50%" bgcolor="#ffffff">{$lang.goods_name}</th>
+        <th width="20%" bgcolor="#ffffff">{$lang.price}</th>
+        <th width="10%" bgcolor="#ffffff">商品状态</th>
+        <th width="20%" bgcolor="#ffffff">{$lang.handle}</th>
+      </tr>
+      <!--{foreach from=$goods_list item=goods}-->
+         <!--{if $goods.goods_id>0}-->
+      <tr>
+        <td bgcolor="#ffffff">
+        	<div style=" width:80px; height:80px; float:left; position:relative;"><img style="width: 80px;height: 80px; position:relative;"   src="{if $goods.thumb eq ''}images/no_picture.png{else}{$goods.thumb}{/if}">
+</div>
+            <a style="line-height:80px; margin-left:10px" href="{$goods.url}" class="f6">{$goods.goods_name|escape:html}</a>
+        </td>
+        <td bgcolor="#ffffff" style="text-align:center"><!-- {if $goods.promote_price neq ""} -->
+          {$lang.promote_price}<span class="goods-price">{$goods.promote_price}</span>
+          <!-- {else}-->
+          {$lang.shop_price}<span class="goods-price">{$goods.shop_price}</span>
+          <!--{/if}-->
+        </td>
+        <td bgcolor="#ffffff" style="text-align:center">
+            <!-- {if $goods.is_on_sale eq 1} -->
+            在售
+          <!-- {else}-->
+            已下架
+          <!--{/if}-->
+        </td>
+        <td align="center" bgcolor="#ffffff">
+          <!-- {if $goods.is_attention} -->
+<!--
+          <a href="javascript:if (confirm('{$lang.del_attention}')) location.href='user.php?act=del_attention&rec_id={$goods.rec_id}'" class="f6">{$lang.no_attention}</a>
+          <!-- {else} -->
+<!--          <a href="javascript:if (confirm('{$lang.add_to_attention}')) location.href='user.php?act=add_to_attention&rec_id={$goods.rec_id}'" class="f6">{$lang.attention}</a>
+          <!-- {/if} -->
+-->
+           <a href="javascript:addToCart({$goods.goods_id})" class="f6">{$lang.add_to_cart}</a> <a href="javascript:if (confirm('{$lang.remove_collection_confirm}')) location.href='user.php?act=delete_collection&collection_id={$goods.rec_id}'" class="f6">{$lang.drop}</a>
+        </td>
+      </tr>
+         <!--{else}-->
+
+         <!--{/if}-->
+      <!--{/foreach} -->
+    </table>
+
+<div class="blank5"></div>
+<!--
+    <h5><span>{$lang.label_affiliate}</span></h5>
+    <div class="blank"></div>
+     <form name="theForm" method="post" action="">
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+    <tr>
+      <td align="right" bgcolor="#ffffff">{$lang.label_need_image}</td>
+      <td bgcolor="#ffffff">
+        <select name="need_image" id="need_image" class="inputBg">
+          <option value="true" selected>{$lang.need}</option>
+          <option value="false">{$lang.need_not}</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td align="right" bgcolor="#ffffff">{$lang.label_goods_num}</td>
+      <td bgcolor="#ffffff"><input name="goods_num" type="text" id="goods_num" value="6" class="inputBg" /></td>
+    </tr>
+    <tr>
+      <td align="right" bgcolor="#ffffff">{$lang.label_arrange}</td>
+      <td bgcolor="#ffffff"><select name="arrange" id="arrange" class="inputBg">
+        <option value="h" selected>{$lang.horizontal}</option>
+        <option value="v">{$lang.verticle}</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td align="right" bgcolor="#ffffff">{$lang.label_rows_num}</td>
+      <td bgcolor="#ffffff"><input name="rows_num" type="text" id="rows_num" value="1" class="inputBg" /></td>
+    </tr>
+    <tr>
+      <td align="right" bgcolor="#ffffff">{$lang.label_charset}</td>
+      <td bgcolor="#ffffff"><select name="charset" id="charset">
+        {html_options options=$lang_list}
+      </select></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center" bgcolor="#ffffff"><input type="button" name="gen_code" value="{$lang.generate}" onclick="genCode()" class="bnt_blue_1" />
+			</td>
+  </tr>
+    <tr>
+      <td colspan="2" align="center" bgcolor="#ffffff"><textarea name="code" cols="80" rows="5" id="code" class="B_blue"></textarea></td>
+  </tr>
+  </table>
+     </form>
+-->
+      <script language="JavaScript">
+        $(document).ready(function(){
+            $('#y_box').removeClass('boxCenterList');
+        });
+
+
+        // var elements = document.forms['theForm'].elements;
+      var url = '{$url}';
+      var u   = '{$user_id}';
+      /**
+       * 生成代码
+       */
+      function genCode()
+      {
+          // 检查输入
+          if (isNaN(parseInt(elements['goods_num'].value)))
+          {
+              layer.msg('{$lang.goods_num_must_be_int}');
+              return;
+          }
+          if (elements['goods_num'].value < 1)
+          {
+              layer.msg('{$lang.goods_num_must_over_0}');
+              return;
+          }
+          if (isNaN(parseInt(elements['rows_num'].value)))
+          {
+              layer.msg('{$lang.rows_num_must_be_int}');
+              return;
+          }
+          if (elements['rows_num'].value < 1)
+          {
+              layer.msg('{$lang.rows_num_must_over_0}');
+              return;
+          }
+
+          // 生成代码
+          var code = '\<script src=\"' + url + 'goods_script.php?';
+          code += 'need_image=' + elements['need_image'].value + '&';
+          code += 'goods_num=' + elements['goods_num'].value + '&';
+          code += 'arrange=' + elements['arrange'].value + '&';
+          code += 'rows_num=' + elements['rows_num'].value + '&';
+          code += 'charset=' + elements['charset'].value + '&u=' + u;
+          code += '\"\>\<\/script\>';
+
+          elements['code'].value = code;
+          elements['code'].select();
+          if (Browser.isIE)
+          {
+              window.clipboardData.setData("Text",code);
+          }
+      }
+
+	  var compare_no_goods = "{$lang.compare_no_goods}";
+      var btn_buy = "{$lang.btn_buy}";
+      var is_cancel = "{$lang.is_cancel}";
+      var select_spe = "{$lang.select_spe}";
+  </script>
+
+
+
+  <!--{/if} -->
+    <!--#收藏商品列表页面 end-->
+
+
+    <!--*缺货登记列表页面 start-->
+    <!--{if $action eq 'booking_list'} -->
+    <h5><span>{$lang.label_booking}</span></h5>
+    <div class="blank"></div>
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      <tr align="center">
+        <td width="20%" bgcolor="#ffffff">{$lang.booking_goods_name}</td>
+        <td width="10%" bgcolor="#ffffff">{$lang.booking_amount}</td>
+        <td width="20%" bgcolor="#ffffff">{$lang.booking_time}</td>
+        <td width="35%" bgcolor="#ffffff">{$lang.process_desc}</td>
+        <td width="15%" bgcolor="#ffffff">{$lang.handle}</td>
+      </tr>
+      <!-- {foreach from=$booking_list item=item} -->
+      <tr>
+        <td align="left" bgcolor="#ffffff"><a href="{$item.url}" target="_blank" class="f6">{$item.goods_name}</a></td>
+        <td align="center" bgcolor="#ffffff">{$item.goods_number}</td>
+        <td align="center" bgcolor="#ffffff">{$item.booking_time}</td>
+        <td align="left" bgcolor="#ffffff">{$item.dispose_note}</td>
+        <td align="center" bgcolor="#ffffff"><a href="javascript:if (confirm('{$lang.confirm_remove_account}')) location.href='user.php?act=act_del_booking&id={$item.rec_id}'" class="f6">{$lang.drop}</a> </td>
+      </tr>
+      <!--{/foreach}-->
+    </table>
+    <!--{/if} -->
+    <div class="blank5"></div>
+   <!--#缺货登记列表页面 -->
+  <!--{if $action eq 'add_booking'} -->
+    {insert_scripts files='utils.js'}
+    <script type="text/javascript">
+	
+    {foreach from=$lang.booking_js item=item key=key}
+    var {$key} = "{$item}";
+    {/foreach}
+    </script>
+    <h5><span>{$lang.add}{$lang.label_booking}</span></h5>
+    <div class="blank"></div>
+     <form action="user.php" method="post" name="formBooking" onsubmit="return addBooking();">
+     <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.booking_goods_name}</td>
+        <td bgcolor="#ffffff">{$info.goods_name}</td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.booking_amount}:</td>
+        <td bgcolor="#ffffff"><input name="number" type="text" value="{$info.goods_number}" class="inputBg" /></td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.describe}:</td>
+        <td bgcolor="#ffffff"><textarea name="desc" cols="50" rows="5" wrap="virtual" class="B_blue">{$info.goods_desc|escape}</textarea>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.contact_username}:</td>
+        <td bgcolor="#ffffff"><input name="linkman" type="text" value="{$info.consignee|escape}" size="25"  class="inputBg"/>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.email_address}:</td>
+        <td bgcolor="#ffffff"><input name="email" type="text" value="{$info.email|escape}" size="25" class="inputBg" /></td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">{$lang.contact_phone}:</td>
+        <td bgcolor="#ffffff"><input name="tel" type="text" value="{$info.tel|escape}" size="25" class="inputBg" /></td>
+      </tr>
+      <tr>
+        <td align="right" bgcolor="#ffffff">&nbsp;</td>
+        <td bgcolor="#ffffff"><input name="act" type="hidden" value="act_add_booking" />
+          <input name="id" type="hidden" value="{$info.id}" />
+          <input name="rec_id" type="hidden" value="{$info.rec_id}" />
+          <input type="submit" name="submit" class="submit" value="{$lang.submit_booking_goods}" />
+          <input type="reset" name="reset" class="reset" value="{$lang.button_reset}" />
+        </td>
+      </tr>
+    </table>
+     </form>
+    <!-- {/if} -->
+    <!-- *我的推荐 -->
+    <!-- {if $affiliate.on eq 1} -->
+     <!-- {if $action eq 'affiliate'} -->
+     <h5 style="margin-bottom:15px"><span>我的邀请</span></h5>
+          <div  style=" float:left; width:358px; padding:20px 0; height:100px;">
+            <div style=" line-height:30px; font-family:'微软雅黑'; color:#666;; font-size:18px; text-align:center; box-sizing:border-box; border-bottom: solid 3px #e95466">
+                <div style=" margin-left:50px; width:350px; padding-bottom:18px">
+                    <img style="width:50px; height:50px; float:left" src="images/icon/qian.png">
+                      <div style="float:left; line-height:50px; margin-left:20px;">收益总额:&nbsp;<span>0.00元</span></div>
+                      <div style=" clear:both"></div>
+                </div>
+              </div>
+          </div>
+          <div  style=" float:left; width:208px; padding:20px 0; height:100px; padding-top:5px">
+            <div style=" margin:auto; width:68px"><img style="width:68px; height:68px" src="images/icon/zongshouru.png"></div>
+            <div style=" line-height:30px; font-family:'微软雅黑'; color:#666; font-size:18px; font-weight:bold; text-align:center;">收益总收入0元</div>
+          </div>
+          <div style=" float:left; width:358px; padding:20px 0; height:100px;">
+            <div style=" line-height:30px; font-family:'微软雅黑'; color:#666; font-size:18px; text-align:center; box-sizing:border-box; border-bottom: solid 3px #e95466">
+                <div  style=" margin-left:50px; width:350px; padding-bottom:18px">
+                    <img style="width:50px; height:50px; float:left" src="images/icon/shouyijifen.png">
+                      <div style="float:left; line-height:50px; margin-left:20px">收益积分:&nbsp;<span>0</span></div>
+                      <div style=" clear:both"></div>
+                </div>
+              </div>
+           </div>
+           <div style="clear:both"></div>
+           <div style="box-sizing:border-box 1px #e5e5e5; padding-top:10px; background-color:#fafafa;">
+             <div style=" width:307px; float:left">
+                <img style=" width:68px; margin:auto; display:block" src="images/icon/ren1.png">
+                  <p style=" text-align:center; font-family:'微软雅黑'; color:#666; padding-bottom:10px">一代会员：<span>0</span>&nbsp;人</p>
+              </div>
+              <div style=" width:308px; float:left">
+                <img style=" width:68px; margin:auto; display:block" src="images/icon/ren2.png">
+                  <p style=" text-align:center; font-family:'微软雅黑'; color:#666;">二代会员：<span>0</span>&nbsp;人</p>
+              </div>
+              <div style=" width:307px; float:left">
+                <img style=" width:68px; margin:auto; display:block" src="images/icon/ren3.png">
+                  <p style=" text-align:center; font-family:'微软雅黑'; color:#666;">三代会员：<span>0</span>&nbsp;人</p>
+              </div>
+              <div style="clear:both"></div>
+           </div>
+           <br />
+      <!-- {if !$goodsid || $goodsid eq 0} -->
+      <h5><span>{$lang.affiliate_detail}</span></h5>
+     
+     {$affiliate_intro}
+    <!-- {if $affiliate.config.separate_by eq 0} -->
+    <!-- 下线人数、分成 -->
+    <div class="blank"></div>
+    <h5><span><a name="myrecommend">{$lang.affiliate_member}</a></span></h5>
+   <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+    <tr align="center">
+      <td bgcolor="#ffffff">{$lang.affiliate_lever}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_num}</td>
+      <td bgcolor="#ffffff">{$lang.level_point}</td>
+      <td bgcolor="#ffffff">{$lang.level_money}</td>
+    </tr>
+    <!-- {foreach from=$affdb key=level item=val name=affdb} -->
+    <tr align="center">
+      <td bgcolor="#ffffff">{$level}</td>
+      <td bgcolor="#ffffff">{$val.num}</td>
+      <td bgcolor="#ffffff">{$val.point}</td>
+      <td bgcolor="#ffffff">{$val.money}</td>
+    </tr>
+    <!-- {/foreach} -->
+  </table>
+<!-- /下线人数、分成 -->
+<!-- {else} -->
+<!-- 介绍订单数、分成 -->
+<!-- /介绍订单数、分成 -->
+<!-- {/if} -->
+<!-- 我的推荐清单 -->
+<div class="blank"></div>
+<h5><span>分成规则</span></h5>
+<table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+    <tr align="center">
+      <td bgcolor="#ffffff">{$lang.order_number}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_money}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_point}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_mode}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_status}</td>
+    </tr>
+    <!-- {foreach from=$logdb item=val name=logdb} -->
+    <tr align="center">
+      <td bgcolor="#ffffff">{$val.order_sn}</td>
+      <td bgcolor="#ffffff">{$val.money}</td>
+      <td bgcolor="#ffffff">{$val.point}</td>
+      <td bgcolor="#ffffff"><!-- {if $val.separate_type == 1 || $val.separate_type === 0} -->{$lang.affiliate_type.$val.separate_type}<!-- {else} -->{$lang.affiliate_type.$affiliate_type}<!-- {/if} --></td>
+      <td bgcolor="#ffffff">{$lang.affiliate_stats[$val.is_separate]}</td>
+    </tr>
+    {foreachelse}
+<tr><td colspan="5" align="center" bgcolor="#ffffff">{$lang.no_records}</td>
+</tr>
+    <!-- {/foreach} -->
+    <!-- {if $logdb} -->
+    <tr>
+    <td colspan="5" bgcolor="#ffffff">
+ <form action="{$smarty.server.PHP_SELF}" method="get">
+  <div id="pager"> {$lang.pager_1}{$pager.record_count}{$lang.pager_2}{$lang.pager_3}{$pager.page_count}{$lang.pager_4} <span> <a href="{$pager.page_first}">{$lang.page_first}</a> <a href="{$pager.page_prev}">{$lang.page_prev}</a> <a href="{$pager.page_next}">{$lang.page_next}</a> <a href="{$pager.page_last}">{$lang.page_last}</a> </span>
+    <select name="page" id="page" onchange="selectPage(this)">
+    {html_options options=$pager.array selected=$pager.page}
+    </select>
+    <input type="hidden" name="act" value="affiliate" />
+  </div>
+</form>
+    </td>
+    </tr>
+    <!-- {/if} -->
+  </table>
+ <script type="text/javascript" language="JavaScript">
+<!--
+{literal}
+function selectPage(sel)
+{
+  sel.form.submit();
+}
+{/literal}
+//-->
+</script>
+<!-- /我的推荐清单 -->
+<div class="blank"></div>
+<h5 style="background:#FFF;"><span></span></h5>
+
+
+
+        <!-- {else} -->
+        <!-- 单个商品推荐 -->
+        <style type="text/css">
+        .types a{ text-decoration:none; color:#006bd0;}
+        </style>
+    <h5><span>{$lang.affiliate_code}</span></h5>
+    <div class="blank"></div>
+  <table width="100%" border="0" cellpadding="5" cellspacing="1" bgcolor="#dddddd">
+    <tr align="center">
+      <td bgcolor="#ffffff">{$lang.affiliate_view}</td>
+      <td bgcolor="#ffffff">{$lang.affiliate_code}</td>
+    </tr>
+    <!-- {foreach from=$types item=val name=types} -->
+    <tr align="center">
+      <td bgcolor="#ffffff" class="types"><script src="{$shopurl}affiliate.php?charset={$ecs_charset}&gid={$goodsid}&u={$userid}&type={$val}"></script></td>      <td bgcolor="#ffffff">javascript {$lang.affiliate_codetype}<br>
+        <textarea cols=30 rows=2 id="txt{$smarty.foreach.types.iteration}" style="border:1px solid #ccc;"><script src="{$shopurl}affiliate.php?charset={$ecs_charset}&gid={$goodsid}&u={$userid}&type={$val}"></script></textarea>[<a href="#" title="Copy To Clipboard" onClick="Javascript:copyToClipboard(document.getElementById('txt{$smarty.foreach.types.iteration}').value);layer.msg('{$lang.copy_to_clipboard}');"  class="f6">{$lang.code_copy}</a>]
+<br>iframe {$lang.affiliate_codetype}<br><textarea cols=30 rows=2 id="txt{$smarty.foreach.types.iteration}_iframe"  style="border:1px solid #ccc;"><iframe width="250" height="270" src="{$shopurl}affiliate.php?charset={$ecs_charset}&gid={$goodsid}&u={$userid}&type={$val}&display_mode=iframe" frameborder="0" scrolling="no"></iframe></textarea>[<a href="#" title="Copy To Clipboard" onClick="Javascript:copyToClipboard(document.getElementById('txt{$smarty.foreach.types.iteration}_iframe').value);layer.msg('{$lang.copy_to_clipboard}');" class="f6">{$lang.code_copy}</a>]
+<br />{$lang.bbs}UBB {$lang.affiliate_codetype}<br /><textarea cols=30 rows=2 id="txt{$smarty.foreach.types.iteration}_ubb"  style="border:1px solid #ccc;">{if $val != 5}[url={$shopurl}goods.php?id={$goodsid}&u={$userid}][img]{if $val < 3}{$goods.goods_thumb}{else}{$goods.goods_img}{/if}[/img][/url]{/if}
+
+[url={$shopurl}goods.php?id={$goodsid}&u={$userid}][b]{$goods.goods_name}[/b][/url]
+{if $val != 1 && $val != 3}[s]{$goods.market_price}[/s]{/if} [color=red]{$goods.shop_price}[/color]</textarea>[<a href="#" title="Copy To Clipboard" onClick="Javascript:copyToClipboard(document.getElementById('txt{$smarty.foreach.types.iteration}_ubb').value);layer.msg('{$lang.copy_to_clipboard}');"  class="f6">{$lang.code_copy}</a>]
+{if $val == 5}<br />{$lang.im_code} {$lang.affiliate_codetype}<br /><textarea cols=30 rows=2 id="txt{$smarty.foreach.types.iteration}_txt"  style="border:1px solid #ccc;">{$lang.show_good_to_you} {$goods.goods_name}
+
+{$shopurl}goods.php?id={$goodsid}&u={$userid}</textarea>[<a href="#" title="Copy To Clipboard" onClick="Javascript:copyToClipboard(document.getElementById('txt{$smarty.foreach.types.iteration}_txt').value);layer.msg('{$lang.copy_to_clipboard}');"  class="f6">{$lang.code_copy}</a>]{/if}</td>
+</tr>
+    <!-- {/foreach} -->
+
+  </table>
+<script language="Javascript">
+copyToClipboard = function(txt)
+{
+ if(window.clipboardData)
+ {
+    window.clipboardData.clearData();
+    window.clipboardData.setData("Text", txt);
+ }
+ else if(navigator.userAgent.indexOf("Opera") != -1)
+ {
+   //暂时无方法:-(
+ }
+ else if (window.netscape)
+ {
+  try
+  {
+    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+  }
+  catch (e)
+  {
+    layer.msg("{$lang.firefox_copy_alert}");
+    return false;
+  }
+  var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+  if (!clip)
+    return;
+  var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+  if (!trans)
+    return;
+  trans.addDataFlavor('text/unicode');
+  var str = new Object();
+  var len = new Object();
+  var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+  var copytext = txt;
+  str.data = copytext;
+  trans.setTransferData("text/unicode",str,copytext.length*2);
+  var clipid = Components.interfaces.nsIClipboard;
+  if (!clip)
+  return false;
+  clip.setData(trans,null,clipid.kGlobalClipboard);
+ }
+}
+                </script>
+            <!-- /单个商品推荐 -->
+            <!-- {/if} -->
+        <!-- {/if} -->
+
+    <!-- {/if} -->
+
+  <!-- /我的推荐 -->
+      </div>
+     </div>
+    </div>
+  </div>
+
+  <!--right end-->
+</div>
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+<script type="text/javascript">
+{foreach from=$lang.clips_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+</script>
+</html>

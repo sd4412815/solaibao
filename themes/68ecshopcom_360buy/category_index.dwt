@@ -1,0 +1,671 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link rel="stylesheet" type="text/css" href="themes/68ecshopcom_360buy/css/category_index.css" />
+<script type="text/javascript" src="themes/68ecshopcom_360buy/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="themes/68ecshopcom_360buy/js/search_goods.js"></script> 
+<script type="text/javascript" src="themes/68ecshopcom_360buy/js/jquery-lazyload.js" ></script>
+{insert_scripts files='jquery.json.js,transport.js'}
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+<div role="navigation" id="site-nav"> 
+<script type="text/javascript" src="themes/68ecshopcom_360buy/js/base-2011.js"></script>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+  <div class="first-show"> <!-- #BeginLibraryItem "/library/ad.lbi" --><!-- #EndLibraryItem -->
+    <div class="w">
+      <div id="main-nav" class="mainnav">
+        <div class="navbox">
+          <div class="float-list" id="float-list"> 
+            <!--{foreach from=get_categories_tree(0) item=cat name=cat0}--> 
+            <!--{if $current_cat_pr_id eq $cat.id}--> 
+            <!--{foreach from=$cat.cat_id item=child name=namechild}-->
+            
+            <dl style="background: none repeat scroll 0% 0% rgb(240, 240, 240);" id="webf{$smarty.foreach.namechild.iteration}">
+              <dt class=""> <strong style="background-position: -464px -62px;"><a href="{$child.url}">{$child.name|escape:html}</a></strong>
+                <p> 
+                  <!--{foreach from=$child.cat_id item=childer}--> 
+                  <a href="{$childer.url}" class="">{$childer.name}</a> 
+                  <!--{/foreach}--> 
+                </p>
+                <b class="arrow-right"></b> </dt>
+              <dd style="top: 0px; min-height:108px;">
+                <ul class="secondlist">
+                  <li> <strong style="background-position: -464px -80px;"><a href="{$child.url}">{$child.name|escape:html}</a></strong>
+                    <div class="float-list-cont"> 
+                      <!--{foreach from=$child.cat_id item=childer}--> 
+                      <a href="{$childer.url}" class="">{$childer.name}</a> 
+                      <!--{/foreach}--> 
+                    </div>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+            <!--{/foreach}--> 
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="themes/68ecshopcom_360buy/js/categories_nav.js"></script> 
+    </div>
+    <div class="image-box1">
+      <?php
+		 $GLOBALS['smarty']->assign('index_image1',get_advlist('频道页-分类ID'.$GLOBALS['smarty']->_var['category'].'-左侧图片1', 1));
+	  ?>
+      {foreach from=$index_image1 item=ad name=index_image} <a href="{$ad.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$ad.image}"  height="187" width="510"></a> {/foreach}
+      <?php
+		 $GLOBALS['smarty']->assign('index_image2',get_advlist('频道页-分类ID'.$GLOBALS['smarty']->_var['category'].'-左侧图片2', 1));
+	  ?>
+      {foreach from=$index_image2 item=ad name=index_image} <a href="{$ad.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$ad.image}" height="187" width="340"></a> {/foreach}
+      <?php
+		 $GLOBALS['smarty']->assign('index_image3',get_advlist('频道页-分类ID'.$GLOBALS['smarty']->_var['category'].'-左侧图片3', 1));
+	  ?>
+      {foreach from=$index_image3 item=ad name=index_image} <a href="{$ad.url}" target="_blank" style="margin-right:0px"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$ad.image}"  height="187" width="340"></a> {/foreach} </div>
+  </div>
+  <div class="blank10"></div>
+  <div class="content"> 
+    <script>
+<!--
+/*第一种形式 第二种形式 更换显示样式*/
+function setTabCatGoods(name,cursel,n){
+for(i=1;i<=n;i++){
+var menu=document.getElementById(name+i);
+var con=document.getElementById("con_"+name+"_"+i);
+con.style.display=i==cursel?"block":"none";
+menu.className=i==cursel?"tabs-selected":"";
+}
+}
+//-->
+</script>
+    <div id="sale-box" class="sale">
+      <div class="saletabs">
+        <div class="saletabs">
+          <ul>
+            <li class="tabs-selected" id="two1" onmouseover="setTabCatGoods('two',1,4)"><i class="arrow"></i>
+              <h3>本周特价</h3>
+            </li>
+            <li id="two2" onmouseover="setTabCatGoods('two',2,4)"><i class="arrow"></i>
+              <h3>明星推荐</h3>
+            </li>
+            <li id="two3" onmouseover="setTabCatGoods('two',3,4)"><i class="arrow"></i>
+              <h3>新品上架</h3>
+            </li>
+            <li id="two4" onmouseover="setTabCatGoods('two',4,4)"><i class="arrow"></i>
+              <h3>热卖商品</h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="salebox">
+        <div id="con_two_1" class="con-two"> 
+          <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+          <!--{if $smarty.foreach.promotion_foreach.iteration eq 1}-->
+          <div class="salebox-1">
+            <dl>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="230" width="230"></a></dt>
+              <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+              <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="LETTER-RED">{$goods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur" ><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-2"> 
+            <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+            <!--{if $smarty.foreach.promotion_foreach.iteration eq 2}-->
+            <div class="salebox-2-l">
+              <dl>
+                <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+            <!--{if $smarty.foreach.promotion_foreach.iteration eq 3}-->
+            <div class="salebox-2-r">
+              <dl>
+                <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+            <!--{if $smarty.foreach.promotion_foreach.iteration eq 4}-->
+            <div class="salebox-2-d">
+              <dl>
+                <dt style="width:220px;"><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="180" width="180"></a></dt>
+                <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+                <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="LETTER-RED">{$goods.goods_brief}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+          <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+          <!--{if $smarty.foreach.promotion_foreach.iteration eq 5}-->
+          <div class="salebox-3">
+            <dl>
+              <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+              <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="230" width="230"></a></dt>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-4"> 
+            <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+            <!--{if $smarty.foreach.promotion_foreach.iteration eq 6}-->
+            <dl class="s-4-t">
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach from=$promotion_goods key=key item=goods name="promotion_foreach"}--> 
+            <!--{if $smarty.foreach.promotion_foreach.iteration eq 7}-->
+            <dl>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.thumb}" title="{$goods.name|escape:html}" alt="{$goods.name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;">{$goods.promote_price}</span></span><span class="zhekou">({$goods.zhekou}折)</span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+        </div>
+        <div id="con_two_2"  class="con-two" style="display: none;"> 
+          <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+          <!--{if $smarty.foreach.goods_list_best.iteration eq 1}-->
+          <div class="salebox-1">
+            <dl>
+              <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="230" width="230"></a></dt>
+              <dd class="good-name"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$bestgoods.url}" target="_blank" class="LETTER-RED">{$bestgoods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur" ><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                {$bestgoods.promote_price}
+                {else}
+                {$bestgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-2"> 
+            <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+            <!--{if $smarty.foreach.goods_list_best.iteration eq 2}-->
+            <div class="salebox-2-l">
+              <dl>
+                <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                  {$bestgoods.promote_price}
+                  {else}
+                  {$bestgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+            <!--{if $smarty.foreach.goods_list_best.iteration eq 3}-->
+            <div class="salebox-2-r">
+              <dl>
+                <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                  {$bestgoods.promote_price}
+                  {else}
+                  {$bestgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+            <!--{if $smarty.foreach.goods_list_best.iteration eq 4}-->
+            <div class="salebox-2-d">
+              <dl>
+                <dt style="width:220px;"><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$bestgoods.goods_name|escape:html}" alt="{$bestgoods.goods_name|escape:html}" height="180" width="180"></a></dt>
+                <dd class="good-name"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+                <dd class="good-exce"><a href="{$bestgoods.url}" target="_blank" class="LETTER-RED">{$bestgoods.goods_brief}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                  {$bestgoods.promote_price}
+                  {else}
+                  {$bestgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+          <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+          <!--{if $smarty.foreach.goods_list_best.iteration eq 5}-->
+          <div class="salebox-3">
+            <dl>
+              <dd class="good-name"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                {$bestgoods.promote_price}
+                {else}
+                {$bestgoods.shop_price}
+                {/if} </span></span></dd>
+              <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$bestgoods.goods_name|escape:html}" alt="{$bestgoods.goods_name|escape:html}" height="230" width="230"></a></dt>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-4"> 
+            <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+            <!--{if $smarty.foreach.goods_list_best.iteration eq 6}-->
+            <dl class="s-4-t">
+              <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$bestgoods.goods_name|escape:html}" alt="{$bestgoods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                {$bestgoods.promote_price}
+                {else}
+                {$bestgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_best name=goods_list_best item=bestgoods}--> 
+            <!--{if $smarty.foreach.goods_list_best.iteration eq 7}-->
+            <dl>
+              <dt><a href="{$bestgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$bestgoods.goods_thumb}" title="{$bestgoods.goods_name|escape:html}" alt="{$bestgoods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$bestgoods.url}" target="_blank" class="">{$bestgoods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"> <span style="font-size:18px;"> {if $bestgoods.promote_price > 0}
+                {$bestgoods.promote_price}
+                {else}
+                {$bestgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+        </div>
+        <div id="con_two_3"  class="con-two" style="display: none;"> 
+          <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+          <!--{if $smarty.foreach.goods_list_new.iteration eq 1}-->
+          <div class="salebox-1">
+            <dl>
+              <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="230" width="230"></a></dt>
+              <dd class="good-name"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$hotgoods.url}" target="_blank" class="LETTER-RED">{$hotgoods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur" ><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                {$hotgoods.promote_price}
+                {else}
+                {$hotgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-2"> 
+            <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+            <!--{if $smarty.foreach.goods_list_new.iteration eq 2}-->
+            <div class="salebox-2-l">
+              <dl>
+                <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                  {$hotgoods.promote_price}
+                  {else}
+                  {$hotgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+            <!--{if $smarty.foreach.goods_list_new.iteration eq 3}-->
+            <div class="salebox-2-r">
+              <dl>
+                <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                  {$hotgoods.promote_price}
+                  {else}
+                  {$hotgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+            <!--{if $smarty.foreach.goods_list_new.iteration eq 4}-->
+            <div class="salebox-2-d">
+              <dl>
+                <dt style="width:220px;"><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$hotgoods.goods_name|escape:html}" alt="{$hotgoods.goods_name|escape:html}" height="180" width="180"></a></dt>
+                <dd class="good-name"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+                <dd class="good-exce"><a href="{$hotgoods.url}" target="_blank" class="LETTER-RED">{$hotgoods.goods_brief}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                  {$hotgoods.promote_price}
+                  {else}
+                  {$hotgoods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+          <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+          <!--{if $smarty.foreach.goods_list_new.iteration eq 5}-->
+          <div class="salebox-3">
+            <dl>
+              <dd class="good-name"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                {$hotgoods.promote_price}
+                {else}
+                {$hotgoods.shop_price}
+                {/if} </span></span></dd>
+              <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$hotgoods.goods_name|escape:html}" alt="{$hotgoods.goods_name|escape:html}" height="230" width="230"></a></dt>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-4"> 
+            <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+            <!--{if $smarty.foreach.goods_list_new.iteration eq 6}-->
+            <dl class="s-4-t">
+              <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$hotgoods.goods_name|escape:html}" alt="{$hotgoods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                {$hotgoods.promote_price}
+                {else}
+                {$hotgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_new name=goods_list_new item=hotgoods}--> 
+            <!--{if $smarty.foreach.goods_list_new.iteration eq 7}-->
+            <dl>
+              <dt><a href="{$hotgoods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$hotgoods.goods_thumb}" title="{$hotgoods.goods_name|escape:html}" alt="{$hotgoods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$hotgoods.url}" target="_blank" class="">{$hotgoods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"> <span style="font-size:18px;"> {if $hotgoods.promote_price > 0}
+                {$hotgoods.promote_price}
+                {else}
+                {$hotgoods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+        </div>
+        <div id="con_two_4"  class="con-two" style="display: none;"> 
+          <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+          <!--{if $smarty.foreach.goods_list_hot.iteration eq 1}-->
+          <div class="salebox-1">
+            <dl>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="230" width="230"></a></dt>
+              <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="LETTER-RED">{$goods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur" ><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                {$goods.promote_price}
+                {else}
+                {$goods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-2"> 
+            <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+            <!--{if $smarty.foreach.goods_list_hot.iteration eq 2}-->
+            <div class="salebox-2-l">
+              <dl>
+                <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                  {$goods.promote_price}
+                  {else}
+                  {$goods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+            <!--{if $smarty.foreach.goods_list_hot.iteration eq 3}-->
+            <div class="salebox-2-r">
+              <dl>
+                <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+                <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                  {$goods.promote_price}
+                  {else}
+                  {$goods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+            <!--{if $smarty.foreach.goods_list_hot.iteration eq 4}-->
+            <div class="salebox-2-d">
+              <dl>
+                <dt style="width:220px;"><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="180" width="180"></a></dt>
+                <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+                <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="LETTER-RED">{$goods.goods_brief}</a></dd>
+                <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                  {$goods.promote_price}
+                  {else}
+                  {$goods.shop_price}
+                  {/if} </span></span></dd>
+              </dl>
+            </div>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+          <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+          <!--{if $smarty.foreach.goods_list_hot.iteration eq 5}-->
+          <div class="salebox-3">
+            <dl>
+              <dd class="good-name"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+              <dd class="good-exce"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_brief}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                {$goods.promote_price}
+                {else}
+                {$goods.shop_price}
+                {/if} </span></span></dd>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="230" width="230"></a></dt>
+            </dl>
+          </div>
+          <!--{/if}--> 
+          <!--{/foreach}-->
+          <div class="salebox-4"> 
+            <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+            <!--{if $smarty.foreach.goods_list_hot.iteration eq 6}-->
+            <dl class="s-4-t">
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"><span style="font-size:18px;"> {if $goods.promote_price > 0}
+                {$goods.promote_price}
+                {else}
+                {$goods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+            <!--{foreach  from=$goods_list_hot name=goods_list_hot item=goods}--> 
+            <!--{if $smarty.foreach.goods_list_hot.iteration eq 7}-->
+            <dl>
+              <dt><a href="{$goods.url}" target="_blank"><img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$goods.goods_thumb}" title="{$goods.goods_name|escape:html}" alt="{$goods.goods_name|escape:html}" height="150" width="150"></a></dt>
+              <dd class="good-name oneline"><a href="{$goods.url}" target="_blank" class="">{$goods.goods_name}</a></dd>
+              <dd class="good-price">￥<span class="good-price_cur"> <span style="font-size:18px;"> {if $goods.promote_price > 0}
+                {$goods.promote_price}
+                {else}
+                {$goods.shop_price}
+                {/if} </span></span></dd>
+            </dl>
+            <!--{/if}--> 
+            <!--{/foreach}--> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {foreach  from=$childcat_goods item=cat name=name}
+  <div class="floorWrapper">
+    <div class="mt">
+      <h2>{$smarty.foreach.name.iteration}F<span>{$cat.cat_name}</span></h2><a href="{$cat.url}" target="_blank" class="category_more">更多 &gt;</a>
+    </div>
+    <script type="text/javascript"> 
+$(document).ready(function(){ 
+$(".itemOuter .itemWrapper").mouseover(function(){ 
+$(this).addClass("itemWrapper_hover"); 
+}); 
+$(".itemOuter .itemWrapper").mouseout(function(){ 
+$(this).removeClass("itemWrapper_hover"); 
+}); 
+}); 
+</script> 
+    <div class="floorContent">
+      {foreach  from=$cat.children  name="cat_children"  item=catgoods}
+      <div class="itemOuter"> 
+        <div class="itemWrapper">
+          <a href="{$catgoods.url}" title='{$catgoods.goods_name|escape:html}' target="_blank">
+          <img src="themes/68ecshopcom_360buy/images/loading.gif" data-original="{$catgoods.goods_thumb}" alt="{$catgoods.goods_name|escape:html}" height="160" width="160">
+          <p>{$catgoods.goods_name}</p>
+          <div class="priceSection">
+            <div class="priceNumber"><span class="mainPrice">{if $catgoods.promote_price > 0}
+                {$catgoods.promote_price}
+                {else}
+                {$catgoods.shop_price}
+                {/if}</span><span class="subPrice"><del>{$catgoods.market_price}</del></span>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+      {/foreach}
+    </div>
+  </div>
+  {/foreach} 
+  <div class="blank"></div>
+  	<!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/site_bar.lbi" --><!-- #EndLibraryItem --> 
+</div>
+<script type="text/javascript" src="themes/68ecshopcom_360buy/js/lib-v1.js"></script> 
+<script>//收集skuId
+var skuIds = [];
+$('ul.list-h li[sku]').each(function(i){
+    skuIds.push($(this).attr('sku'));
+})
+
+/* spu合并 begin */
+var imgSize = 'n2';
+if ( $('#plist').hasClass('plist-160') ) {
+    imgSize = 'n2';
+}
+if ( $('#plist').hasClass('plist-220') ) {
+    if ( $('#plist').hasClass('plist-160') ) {
+        imgSize = 'n2';
+    } else {
+        imgSize = 'n7';
+    }
+}
+if ( $('#plist').hasClass('plist-n7') ) {
+    imgSize = 'n7';
+}
+if ( $('#plist').hasClass('plist-n8') ) {
+    imgSize = 'n8';
+}
+
+
+$('.p-scroll').each(function() {
+    var scroll = $(this).find('.p-scroll-wrap'),
+        btnPrev = $(this).find('.p-scroll-prev'),
+        btnNext = $(this).find('.p-scroll-next'),
+        len = $(this).find('li').length;
+    if ( len > 5 ) {
+        btnPrev.css('display', 'inline');
+        btnNext.css('display', 'inline');
+        scroll.imgScroll({
+            visible: 5,
+            showControl: false,
+            next: btnNext,
+            prev: btnPrev
+        });
+    }
+    var colors = scroll.find('img');
+    colors.each(function() {
+        $(this).mouseover(function() {
+            var index = $(this).parent('li').parent('li').attr('index');
+            var src = $(this).attr("src"),
+                skuid = $(this).attr('data-skuid');
+            scroll.find('a').removeClass('curr');
+            $(this).parent('a').addClass('curr');
+            var targetImg = $(this).parents('li').find('.p-img img').eq(0),
+                targetImgLink = $(this).parents('li').find('.p-img a').eq(0),
+                targetNameLink = $(this).parents('li').find('.p-name a').eq(0),
+                targetFollowLink = $(this).parents('li').find('.product-follow a').eq(0);
+            targetImg.attr( 'src', src.replace('\/n5\/', '\/'+imgSize+'\/') );
+            targetImgLink.attr( 'href', targetImgLink.attr('href').replace(/\/\d{6,}/, '/'+skuid) );
+            targetNameLink.attr( 'href', targetNameLink.attr('href').replace(/\/\d{6,}/, '/'+skuid) );
+            targetFollowLink.attr( 'id', targetFollowLink.attr('id').replace(/coll\d{6,}/, 'coll'+skuid) );
+
+        });
+    });
+});
+$('#plist.plist-n7 .list-h>li').hover(function() {
+    $(this).addClass('hover').find('.product-follow,.shop-name').show();
+    $(this).find('.item-wrap').addClass('item-hover');
+}, function() {
+    $(this).removeClass('hover').find('.item-wrap').removeClass('item-hover');
+    $(this).find('.product-follow,.shop-name').hide();
+});
+
+
+/* spu合并 end */
+</script> 
+<script type="text/javascript">
+$(document).ready(function(){
+var headHeight=580;  //这个高度其实有更好的办法的。使用者根据自己的需要可以手工调整。
+ 
+var nav=$("#filter");        //要悬浮的容器的id
+$(window).scroll(function(){
+ 
+if($(this).scrollTop()>headHeight){
+nav.addClass("cat-nav-fixed");   //悬浮的样式
+}
+else{
+nav.removeClass("cat-nav-fixed");
+}
+})
+})
+</script>
+{* 代码增加_start  By  www.68ecshop.com *}
+<script type="text/javascript">
+$("img").lazyload({
+    effect       : "fadeIn",
+	 skip_invisible : true,
+	 failure_limit : 20
+});
+</script>
+{* 代码增加_end  By  www.68ecshop.com *}
+</body>
+</html>

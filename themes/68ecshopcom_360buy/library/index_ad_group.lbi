@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+$(document).ready(function(){
+  var a = $("#specialId").children("li");
+  var b = $(".bf-content"); 
+  if($(a).length > 0){ 
+		b.css({"display":"block"});
+
+	} 
+	else{ 
+		b.css({"display":"none"});
+	} 
+});
+</script>
+<div class="bf-content" style="display:none">
+	<span class="title"></span>
+    <ul id="specialId" class="bf-ul-content clearfix">
+                	<li class="b">
+						{insert name='ads' id=107 num=1}
+					</li>                                                    
+                    <li class="b">
+						{insert name='ads' id=108 num=1}
+					</li>                                                    
+                    <li class="b">
+						{insert name='ads' id=109 num=1}
+					</li>                                                    
+                    <li class="b">
+						{insert name='ads' id=110 num=1}
+					</li>  
+                    <li class="b">
+						{insert name='ads' id=111 num=1}
+					</li>                                                                
+                </ul>
+</div>

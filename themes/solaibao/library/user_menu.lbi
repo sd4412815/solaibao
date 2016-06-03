@@ -1,0 +1,32 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="userMenu" style="position:relative">
+<div style="position:absolute; width:5px; height:30px; background-color:#e95466; left:0px; top:33px; border-right:20px solid #e5e5e5"></div>
+<div style="position:absolute; width:5px; height:30px; background-color:#e95466; left:0px; top:264px; border-right:20px solid #e5e5e5""></div>
+<div style="position:absolute; width:5px; height:30px; background-color:#e95466; left:0px; top:462px; border-right:20px solid #e5e5e5""></div>
+<div style="position:absolute; width:5px; height:30px; background-color:#e95466; left:0px; top:528px; border-right:20px solid #e5e5e5""></div>
+
+  <a href="user.php" {if $action eq 'default'}class="curs"{/if} style=" font-size:14px;">个人中心</a>
+<p style="background-color:#e5e5e5; padding-left:10px">订单中心</p>
+
+    <a href="user.php?act=order_list"{if $action eq 'order_list'|| $action eq 'order_detail'}class="curs"{/if}>我的订单</a>
+<!--修改代码 by yangxh-->
+    <a href="user.php?act=order_list&status=1">等待支付</a>
+    <a href="user.php?act=order_list&status=2" >等待发货</a>
+    <a href="user.php?act=order_list&status=3" >等待收货</a>
+    <a href="user.php?act=order_list&status=10" >已完成订单</a>
+        <!--修改代码 by yangxh-->
+    <a href="user.php?act=comment_list&status=3"{if $action eq 'comment_list'}class="curs"{/if}> 我的评论</a>
+    
+<p style="background-color:#e5e5e5; padding-left:10px">资产中心</p>
+
+	<a href="user.php?act=account_log"{if $action eq 'account_log'}class="curs"{/if}>我的余额</a>
+    <a href="user.php?act=my_profit"{if $action eq 'my_profit'}class="curs"{/if}>我的收益</a>
+    <a href="user.php?act=my_score"{if $action eq 'my_score'}class="curs"{/if}>我的积分</a>
+    <a href="user.php?act=bonus"{if $action eq 'bonus'}class="curs"{/if}> {$lang.label_bonus}</a>
+    <a href="user.php?act=affiliate"{if $action eq 'affiliate'}class="curs"{/if}>我的邀请</a>
+<p style="background-color:#e5e5e5; padding-left:10px">收藏中心</p>
+    <a href="user.php?act=collection_list"{if $action eq 'collection_list'}class="curs"{/if}> 我的收藏</a>
+<p style="background-color:#e5e5e5; padding-left:10px">信息中心</p>
+	<a href="user.php?act=address_list"{if $action eq 'address_list'}class="curs"{/if}>收货地址</a>
+    <a href="user.php?act=profile"{if $action eq 'zprofile'}class="curs"{/if}>信息设置</a>
+</div>

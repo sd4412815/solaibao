@@ -1,0 +1,22 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+<div id="sn-bg">
+  <div class="sn-bg-right"> </div>
+</div>
+<div id="sn-bd"> <b class="sn-edge"></b>
+  <div class="sn-container"> {insert_scripts files='utils.js,common.min.js'}
+    <p id="login-info" class="sn-login-info">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}</p>
+    <ul class="sn-quick-menu">
+      <li class="sn-mybrand"><a class="sn-login" href="user.php" target="_top">我的账户</a></li>
+      <li class="sn-mybrand"><a href="#">收藏本站</a></li>
+      <li class="sn-cart mini-cart menu">
+        <a id="mc-menu-hd" class="sn-cart-link mui-global-iconfont" href="flow.php" target="_top" rel="nofollow">购物车
+         </a>
+      </li>
+      <li class="sn-mybrand"><a href="#">关注我们</a></li>
+    </ul>
+  </div>
+</div>
+</div>

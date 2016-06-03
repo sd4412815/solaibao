@@ -1,0 +1,172 @@
+<!-- #BeginLibraryItem "/library/user_top.lbi" --><!-- #EndLibraryItem -->
+<form action="{:url('user/register')}" method="post" name="formUser" id="regForm" >
+<div class="container">
+  <div class="row">
+  		<div class="col-xs-8 col-xs-offset-2">
+  			<p class="text-center" style="margin-top:40px"><a href="{:url('index/index')}"><img src="images/logo3.png"></p></a>
+    	</div>
+  </div>
+  
+  <div class="row">
+ 		<div class="col-xs-10 col-xs-offset-1" style="margin-top:20px; position:relative;">
+        	<input type="text" class="form-control" id="mobile" placeholder="请输入手机号" style=" border-radius:5px; padding-left:6%; height:40px; font-size:14px"  name="mobile" size="25" {if $field.is_need} style="width:85%;"{/if}>
+            <span id="check_mobile" style="font-size: 14px;color: #e94566;"></span>
+         </div>	
+  </div>
+
+  <div class="row">
+ 		<div class="col-xs-5 col-xs-offset-1" style="margin-top:20px; position:relative;">
+        <button style=" background-color:#e95466; border-radius:5px; width:100%; display:block; border:none; height:34px; text-align:center; color:#FFF; line-height:32px; padding:0; height:40px; font-size:14px" id="get_captcha" type="button" onclick="check_mobile()">免费获取验证码</button>
+         </div>	
+        <div class="col-xs-5" style="margin-top:20px; position:relative;">
+        	<input type="text" name="mobile_code" class="form-control" placeholder="请输入验证码" style=" border-radius:5px; padding-left:10%; text-align:center; display:block; width:100%; height:40px; font-size:14px">
+         </div>
+  </div>
+    <p class="row col-xs-offset-1" id="captcha" style="font-size: 14px;color: #e94566;"></p>
+
+  <div class="row">
+ 		<div class="col-xs-10 col-xs-offset-1" style="margin-top:20px; position:relative; position:relative;">
+        	<span>
+                <input  placeholder="{$lang.no_password}" class="form-control yc1" name="password" id="password" type="password" datatype="*6-16"  style=" border-radius:5px; padding-left:6%; height:40px; font-size:14px">
+            </span>
+        </div>
+        
+  </div>
+  
+  <div class="row">
+ 		<div class="col-xs-10 col-xs-offset-1" style="margin-top:20px; position:relative; position:relative;">
+        	<span>
+                <input  placeholder="请再次确认密码" class="form-control yc1" name="repass" id="repass" type="password" datatype="*6-16"  style=" border-radius:5px; padding-left:6%; height:40px; font-size:14px">
+                </span>
+        </div>  
+  </div>
+
+  <div class="row">
+  		<div class="col-xs-10 col-xs-offset-1" style="margin-top:30px; margin-bottom:30px; position:relative;">
+  			<input name="act" type="hidden" value="act_register" />
+          	<input name="enabled_sms" type="hidden" value="0" />
+          	<input type="hidden" name="back_act" value="{$back_act}" />
+            <button style="border-radius:5px; background-color:#e95466; border:none; height:50px" id="go" type="button" class="btn btn-primary btn-lg btn-block">注册</button>
+        </div>
+  </div>
+
+</form>
+<script type="text/javascript">
+
+	function check_mobile(){
+        var mobile=$('#mobile');
+        var re = /^1\d{10}$/;
+
+       if(re.test(mobile.val())){
+           $('#check_mobile').html('');
+           $.post('{:url("user/check_mobile")}', {mobile:mobile.val()}, function(data){
+               callback_check_mobile(data);
+            }, 'json');
+       }else{
+           layer.open({
+               content: '手机号格式不正确',
+               style: 'background-color:#09C1FF; color:#fff; border:none;',
+               time: 2
+           });
+        }
+
+
+
+	}
+
+    function callback_check_mobile(data){
+        if(data ==0){
+            $('#check_mobile').html('可以注册');
+            $('#check_mobile').css('color','green');
+            sms();
+        }else{
+            layer.open({
+                content: '手机号以存在，请重新输入',
+                style: 'background-color:#09C1FF; color:#fff; border:none;',
+                time: 2
+            });
+        }
+    }
+
+    function sms(){
+        var mobile=$('#mobile').val();
+        $.post('{:url("user/sms")}', {mobile:mobile}, function(data){
+            callback_sms(data);
+        }, 'json');
+    }
+
+    function callback_sms(data){
+        $('#captcha').html(data.msg);
+        if(data.status){
+            var o=$('get_captcha');
+            time(o);
+        }
+    }
+    var wait=60;
+    function time(o){
+
+        if (wait == 0) {
+            $('#get_captcha').attr('disabled',false);
+            $('#get_captcha').css('background','#e95466');
+            $('#get_captcha').html('免费获取验证码');
+            wait = 60;
+        } else {
+            $('#get_captcha').attr('disabled',true);
+            $('#get_captcha').css('background','#999');
+            $('#get_captcha').html('重新发送('+wait+')');
+            wait--;
+            setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+        }
+
+    }
+
+
+    var regForm=document.getElementById('regForm');
+    var go=document.getElementById('go');
+    var re = /^1\d{10}$/;
+
+    go.onclick = function(){
+        var mobile = regForm.mobile.value;
+        var password=regForm.password.value;
+        var repass=regForm.repass.value;
+        var mobile_code=regForm.mobile_code.value;
+
+        if(!re.test(mobile)){
+            layer.open({
+                content: '手机号格式不正确',
+                style: 'background-color:#09C1FF; color:#fff; border:none;',
+                time: 2
+            });
+        }else if(password.length<6){
+            layer.open({
+                content: '请输入大于6位的密码',
+                style: 'background-color:#09C1FF; color:#fff; border:none;',
+                time: 2
+            });
+        }else if(password!=repass){
+            layer.open({
+                content: '两次密码不一致',
+                style: 'background-color:#09C1FF; color:#fff; border:none;',
+                time: 2
+            });
+        }else if(mobile_code.length != 6){
+            layer.open({
+                content: '验证码位数不正确',
+                style: 'background-color:#09C1FF; color:#fff; border:none;',
+                time: 2
+            });
+        }else{
+            $('#get_captcha').attr('disabled',false);
+            regForm.submit();
+        }
+    }
+
+
+</script>
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->

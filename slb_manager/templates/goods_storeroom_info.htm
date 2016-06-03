@@ -1,0 +1,66 @@
+<!-- $Id: goods_type_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,validator.js"}
+
+<div class="main-div">
+  <form action="" method="post" name="theForm" onsubmit="return validate();">
+    <table cellspacing="1" cellpadding="3" width="100%">
+      <tr>
+        <td class="label">{$lang.storeroom_name}:</td>
+        <td><input type="text" name="store_name" value="{$goods_store.store_name|escape}" size="40" />
+        {$lang.require_field}</td>
+      </tr>
+
+      <tr>
+        <td class="label"> {$lang.storeroom_desc}:</td>
+        <td>
+          <textarea name="store_desc" rows="5" cols="40">{$goods_store.store_desc|escape}</textarea>
+        </td>
+      </tr>
+	  <tr >
+        <td class="label">{$lang.sort_order}:</td>
+        <td >  <input type="text" name="sort_order" value="{$goods_store.sort_order}" size="10" /></td>
+      </tr>
+	   
+	   <!-- <tr >
+        <td class="label">{$lang.storeroom_province}:</td>
+        <td>
+		{foreach from=$province_list  key=region_id item=region_item}
+		<input type="checkbox" name="province[]" value="{$region_id}" {if $region_item.sel eq '1'}checked=checked{/if}>{$region_item.name}
+		{/foreach}
+		</td>
+      </tr> -->
+
+      <tr align="center">
+        <td colspan="2">
+          <input type="hidden" name="store_id" value="{$goods_store.store_id}" />
+          <input type="submit" value="{$lang.button_submit}" class="button" />
+          <input type="reset" value="{$lang.button_reset}" class="button" />
+          <input type="hidden" name="act" value="{$form_act}" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+<script type="text/javascript">
+<!--
+{literal}
+onload = function() {
+  document.forms['theForm'].elements['store_name'].focus();
+  startCheckOrder();
+}
+
+function validate()
+{
+  var validator = new Validator('theForm');
+  validator.required('store_name', store_name_empty);
+
+  return validator.passed();
+}
+{/literal}  
+//-->
+</script>
+
+{include file="pagefooter.htm"}

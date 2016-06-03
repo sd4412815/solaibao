@@ -1,0 +1,52 @@
+<div class="search" style="display:none;">
+  <div class="ect-bg">
+    <header class="ect-header ect-margin-tb ect-margin-lr text-center"><span>{$lang.search}</span><a href="javascript:;" onClick="closeSearch();"><i class="icon-close pull-right"></i></a></header>
+  </div>
+  <div class="ect-padding-lr" style="margin-bottom:30px;">
+  <!-- <div style="margin-top:20px;">
+      <img src="../images/log.png" alt="" style="width:100%; height:50%;margin-bottom:20px;">
+  </div> -->
+     <form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+      <div class="input-search"> <span>
+        <input name="keywords" type="search" placeholder="{$lang.no_keywords}" id="keywordBox">
+        </span>
+        <button type="submit" value="{$lang.search}"><i class="glyphicon glyphicon-search"></i></button>
+      </div>
+    </form>
+    <!-- {if $hot_search_keywords} -->
+    <div class="hot-search">
+      <p>
+      <h4 class="title"><b>{$lang.hot_search}：</b></h4>
+      </p>
+      <!-- {foreach from=$hot_search_keywords item=ky} --> 
+      <a href="{:url('category/index', array('keywords'=>$this->_var[ky]))}<!-- {if $id} -->&id={$id}<!-- {/if} -->">{$ky}</a> 
+      <!-- {/foreach} --> 
+    </div>
+    <!-- {/if} --> 
+  </div>
+  <!-- 点击率高的商品 -->
+  <div>
+  <div style="margin-bottom:30px; text-align:center;"> ----------------</i> <p class="glyphicon glyphicon-hand-right"> 热 搜 商 品 </p> &nbsp;&nbsp;<p class="glyphicon glyphicon-hand-left"> </p> ----------------</i></div>
+  
+</div>
+<div style="width:100%; padding-left:4%; padding-right:4%;">
+ <!-- {foreach from=$goods_search key=key item=goods} -->
+
+    <div style="width:46%; float:left; text-align:center; background:#fff; margin:2%; padding-bottom:5px;" >
+      <div>
+        <a href="{$goods.url}">
+          <img src="{if $goods.goods_thumb eq ''}../images/no_picture.png{else}{$goods.goods_thumb}{/if}" alt="商品图片" style="width:20vw; height:20vw;">
+        </a>
+      </div>
+      <dl>
+        <div style="width:100%; padding-left:20%;">
+          <dd style="text-align:left; font-size:12px;"><a href="{$goods.url}">{if strlen($goods.goods_name) gt 8}{$goods.goods_name|truncate:8:"...":true}{else}{$goods.goods_name}{/if}</a></dd>
+          <dd style="text-align:left; font-size:12px;">{$goods.shop_price}</dd>
+          <dd style="text-align:left; font-size:12px;">受喜爱度：{$goods.click_count}</dd>
+        </div>
+      </dl>
+    </div>
+  <!-- {/foreach} -->
+  <div style="clear:both;"></div>
+</div>
+</div>

@@ -1,0 +1,42 @@
+<!-- {*YWT_增加代码*} -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<!-- {if $cat_rec_sign neq 1} -->
+<div class="xm-box">
+<h4 class="title"><span>3F 精品推荐</span> <a class="more" href="supplier.php?go=more&suppId={$smarty.session.suppId}&id=10446">更多</a></h4>
+<!--{foreach from=$goods_best item=bests}-->
+<div id="show_best_area" class="clearfix" style="height:200px;">
+  <div class="goodsintro">
+         <img src="images/index/pic03.jpg" />
+     </div>
+  <!--{/foreach}-->
+  <!-- {/if} -->
+  <div style="float:right; width:960px;" >
+  <!--{foreach from=$best_goods item=best}-->
+  <div class="goodsItem" >
+           <a href="supplier.php?go=goods&suppId={$best.suppid}&id={$best.goods_id}&pid={$best.parent_id}"><img src="{if $best.goods_thumb eq ''}images/no_picture.png{else}{$best.goods_thumb}{/if}" alt="{$best.goods_name|escape:html}" class="goodsimg" /></a>
+           <p class="f1"><a href="supplier.php?go=goods&suppId={$best.suppid}&id={$best.goods_id}&pid={$best.parent_id}" title="{$best.goods_name|escape:html}">{$best.goods_name}</a></p>
+           
+           
+ 市场价：<font class="market">{$best.market_price}</font> <br/>
+      
+           本店价：<font class="f1">
+           <!-- {if $best.promote_price neq ""} -->
+          {$best.promote_price}
+          <!-- {else}-->
+          {$best.shop_price}
+          <!--{/if}-->
+           </font>      
+		    
+        </div>
+
+  <!--{/foreach}-->
+         </div>
+  <!-- {if $cat_rec_sign neq 1} -->
+  </div>
+
+</div>
+<div class="blank"></div>
+  <!-- {/if} -->
+<!-- {/if} -->
+<!-- {*YWT_增加代码end*} -->

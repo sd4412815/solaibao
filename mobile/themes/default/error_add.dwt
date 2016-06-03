@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增问题</title>
+    <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+</head>
+<body style="background: #eee;">
+<form action="{:url('error/add')}" method="post">
+    <table style="margin: 50px auto;width: 70%" class="table">
+        <tr>
+            <td><lable>标题：</lable></td>
+            <td><input class="input form-control" type="text" name="title" value="{$error.title}"></td>
+        </tr>
+        <tr>
+            <td><lable>来源：</lable></td>
+            <td>
+                <select class="select form-control" name="froms" id="">
+                    <option {if $error.froms eq 'PC_Home'}selected='selected'{/if} value="PC_Home">PC_Home</option>
+                    <option  {if $error.froms eq 'PC_Admin'}selected='selected'{/if} value="PC_Admin">PC_Admin</option>
+                    <option  {if $error.froms eq 'Mobile_Home'}selected='selected'{/if} value="Mobile_Home">Mobile_Home</option>
+                    <option  {if $error.froms eq 'Mobile_Admin'}selected='selected'{/if} value="Mobile_Admin">Mobile_Admin</option>
+                    <option  {if $error.froms eq 'supplier_Home'}selected='selected'{/if} value="supplier_Home">supplier</option>
+                    <option  {if $error.froms eq 'supplier_Admin'}selected='selected'{/if} value="supplier_Admin">supplier_Admin</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><lable>详细描述：</lable></td>
+            <td>
+                <textarea class="form-control" name="info" id="" cols="30" rows="10">{$error.info}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><lable>排序：</lable></td>
+            <td><input class="form-control" type="text" name="soft" value="{$error.soft}" placeholder="越大越靠前"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="{$sub}" class="btn btn-lg btn-warning text-center pull-right"></td>
+        </tr>
+
+    </table>
+
+</form>
+</body>
+</html>
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js" ></script>
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>

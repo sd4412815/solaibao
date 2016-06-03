@@ -1,0 +1,181 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<style>
+	.input-search input{ height:45px; width:91%; float:left; border:none; padding: 0 0.6em; box-sizing: border-box; border-radius: 0; border: none; border-radius: 0.4em 0 0 0.4em;}
+	.input-search button{ height:45px;}		
+</style>
+<div class="con"> 
+  <header class="ect-header ect-margin-tb ect-margin-lr"> <a href="{:url('category/top_all')}" class="pull-left ect-icon ect-icon1 ect-icon-cate1"></a>
+   <form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+    <div class="ect-header-div">
+      <!--<button class="btn btn-default ect-text-left ect-btn-search" onClick="javascript:openSearch();"><i class="fa fa-search"></i>&nbsp;{$lang.no_keywords}</button>-->
+
+        <input type="search" name="keywords" style="margin: 0; border:none; border-color:transparent; border-radius: 0.4em 0 0 0.4em; height:2.8em;" class="col-xs-10 ect-text-left input-search" placeholder="{$lang.no_keywords}" id="keywordBox">
+
+        <button  class="btn col-xs-2" type="submit" style="padding:2% 4%;" onclick="return check('keywordBox')" ><i class="glyphicon glyphicon-search" style="font-size: 20px;"></i></button>
+
+    </div>
+    </form>
+  </header>
+  <!--banner滚动图片s-->
+  <div id="focus" class="focus ect-margin-tb">
+    <div class="hd">
+      <ul>
+      </ul>
+    </div>
+    <div class="bd">
+      {insert name='ads' id=1 num=3}
+    </div>
+  </div>
+  <!--导航-->
+ <!--/导航-->
+  <!--首页快速导航-->
+  <nav class="container-fluid">
+    <ul class="row ect-row-nav">
+      {foreach from=$navigator item=nav}
+      <a href="{$nav.url}">
+      <li class="col-sm-3 col-xs-3"><i><img src="{$nav.pic}" ></i>
+        <p class="text-center">{$nav.name}</p>
+      </li>
+      </a> 
+      {/foreach}
+    </ul>
+  </nav>
+  <!--/首页快速导航-->
+  
+  <!--特惠活动-->
+<!--   <div class="row" style="margin-top:20px;margin-bottom:20px;">
+       <p style="color:#E95466" class="text-center"><img src="images/queen.png" width="25" height="17" alt=""/>&nbsp;人气新品</p>
+  </div>
+  <div>
+    	  <div style=" float:left; width:50%">
+        	<a href=""><img src="images/new1.png" style="width:100%"></a>
+        </div>
+        <div style=" float:left; width:50%">
+        	  <a href=""><img src="images/new2.png" style="width:100%"></a>
+            <a href=""><img src="images/new3.png" style="width:50%; float:left"></a>
+            <a href=""><img src="images/new4.png" style="width:50%; float:left"></a>
+        </div>
+        <div style="clear:both"></div>
+  </div> -->
+   <!--/特惠活动--> 
+   <!--1-->
+<div class="container-fluid"><!--商品列表-->  
+    <div class="row" style="background-color:#FFF;border-bottom:1px solid #E95466;height:40px;"><!--1f特价产品-->
+       <div class="col-xs-3">
+       </div>
+       <div class="col-xs-6 text-center" style="padding-top:10px;">
+           <img src="images/star.png" width="15" height="15" alt=""/>&nbsp;
+           <strong>新品推荐</strong>&nbsp;
+           <img src="images/star.png" width="15" height="15" alt=""/>
+       </div>
+       <div class="col-xs-3 text-right" style="padding-top:10px;">
+            <a href="index.php?m=default&c=goodslist&a=index1&type=new">更多 </a>
+       </div>
+    </div>
+  
+    <div class="row">
+        {foreach from=$new_goods item=new_data}
+        <div class="col-xs-6" style="padding:5px 6px 5px 6px;">
+        <div style=" width:148px; height:290px;">
+            <a href="{$new_data.url}" class="thumbnail">
+                <img src="{if $new_data.thumb eq ''}./images/no_picture.png{else}{$new_data.thumb}{/if}" class="img-responsive img-rounded" style="width:100%;height:150px;" alt="{$new_data.name}">
+            </a>
+           
+            <a href="{$new_data.url}" style="font-size:12px;">{if strlen($new_data.name) gt 20}{$new_data.name|truncate:20:"...":true}{else}{$new_data.name}{/if}</a>
+            <p><span style="color:#A9A9A9;font-size:11px;">原价:<s>{$new_data.market_price}</s></span><br>
+               <span style="color:#e95466;font-size:12px;padding-top:2px;">
+               <strong>{$new_data.shop_price}</strong>
+               </span>
+            </p>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        {/foreach}
+    </div>
+    <!--/1F特价商品-->
+
+     <!--2f热卖商品-->
+     <div class="row" style="background-color:#FFF;border-bottom:1px solid #E95466;height:40px;"><!--1f特价产品-->
+       <div class="col-xs-3">
+       </div>
+       <div class="col-xs-6 text-center" style="padding-top:10px;">
+           <img src="images/star.png" width="15" height="15" alt=""/>&nbsp;
+           <strong>热卖商品</strong>&nbsp;
+           <img src="images/star.png" width="15" height="15" alt=""/>
+       </div>
+       <div class="col-xs-3 text-right" style="padding-top:10px;">
+            <a href="index.php?m=default&c=goodslist&a=index1&type=hot">更多 </a>
+       </div>                   
+     </div>
+   
+     <div class="row">
+     {foreach from=$hot_goods item=hot_data}
+
+         <div class="col-xs-6" style="padding:5px 6px 5px 6px">
+         <div style=" width:148px; height:290px;">
+             <a href="{$hot_data.url}" class="thumbnail">
+                <img src="{if $hot_data.thumb eq ''}images/no_picture.png{else}{$hot_data.thumb}{/if}" class="img-responsive img-rounded" style="width:100%;height:150px;" alt="{$hot_data.name}">
+             </a>
+             <div class="row">
+                <p style="font-size:14px;margin-left:20px">{if strlen($hot_data.name) gt 20}{$hot_data.name|truncate:20:"...":true}{else}{$hot_data.name}{/if}</p>
+                <p style="color:#A9A9A9;font-size:12px;margin-left:20px;;margin-right:50px;display:block;float:left;width:80%">
+                    <span style="float:left">原价：<s>{$hot_data.market_price}</s></span><br>
+                    <span style="color:#e95466;font-size:14px;display:block;"><strong>{$hot_data.shop_price}</strong></span>
+                </p>
+             </div>
+             </div>
+         </div>
+     {/foreach}
+     </div>
+    
+    <!--3f精品推荐-->
+    <div class="row" style="background-color:#FFF;border-bottom:1px solid #E95466;height:40px;">
+       <div class="col-xs-3">
+       </div>
+       <div class="col-xs-6 text-center" style="padding-top:10px;">
+           <img src="images/star.png" width="15" height="15" alt=""/>&nbsp;
+           <strong>精品推荐</strong>&nbsp;
+           <img src="images/star.png" width="15" height="15" alt=""/>
+       </div>
+       <div class="col-xs-3 text-right" style="padding-top:10px;">
+            <a href="index.php?m=default&c=goodslist&a=index1&type=best">更多 </a>
+       </div>                    
+    </div>
+    <div class="row">
+        {foreach from=$best_goods item=best_data}
+        <div class="col-xs-6" style="padding:5px 6px 5px 6px">
+        <div style=" width:148px; height:290px;">
+            <a href="{$best_data.url}" class="thumbnail">
+                <img src="{if $best_data.thumb eq ''}images/no_picture.png{else}{$best_data.thumb}{/if}" class="img-responsive img-rounded" style="width:100%;height:150px;"alt="{$best_data.name}">
+            </a>
+           
+            <a href="{$best_data.url}" style="font-size:12px;">{if strlen($best_data.name) gt 20}{$best_data.name|truncate:20:"...":true}{else}{$best_data.name}{/if}</a>
+            <p>
+            	<span style="color:#A9A9A9;font-size:11px;">原价:<s>{$best_data.market_price}</s></span><br>
+               <span style="color:#e95466;font-size:12px;padding-top:2px;"><strong>{$best_data.shop_price}</strong>
+               </span>
+            </p>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        {/foreach}
+    </div>
+    
+    <!--/3F精品推荐-->
+    
+</div>
+   
+  
+  
+ <footer>
+    <nav class="ect-nav"><!-- #BeginLibraryItem "/library/page_menu.lbi" --><!-- #EndLibraryItem --></nav>
+  </footer>
+  <div style="padding-bottom:4.2em;"></div>
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+get_asynclist("{:url('index/ajax_goods', array('type'=>'best'))}" , '__TPL__/images/loader.gif');
+</script>
+</body>
+</html>

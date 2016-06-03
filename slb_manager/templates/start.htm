@@ -1,0 +1,239 @@
+<!-- $Id: start.htm 17216 2011-01-19 06:03:12Z liubo $ -->
+<style>
+	.warning{
+		background-color:#e95466;
+		display:block;
+		width:100px;
+		font-size:16px;
+		text-align:center;
+		padding:8px 0;
+		border-radius:5px;
+		position:absolute;
+		right:80px;
+		top:7px;
+		}
+</style>
+{include file="pageheader.htm"}
+<!-- directory install start -->
+<ul id="cloud_list" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
+</ul>
+{if $warn=="1"}
+<a href="goods.php?act=warn" class="warning" style="color:#fff;">{$info}</a>
+{/if}
+<ul id="lilist" style="padding:0; margin: 0; list-style-type:none; color: #CC0000;">
+  {foreach from=$warning_arr item=warning}
+  <li class="Start315">{$warning}</li>
+  {/foreach}
+</ul>
+
+<!-- directory install end -->
+<!-- start personal message -->
+{if $admin_msg}
+<div class="list-div" style="border: 1px solid #CC0000">
+  <table cellspacing='1' cellpadding='3'>
+    <tr>
+      <th>{$lang.pm_title}</th>
+      <th>{$lang.pm_username}</th>
+      <th>{$lang.pm_time}</th>
+    </tr>
+    {foreach from=$admin_msg item=msg}
+      <tr align="center">
+        <td align="left"><a href="message.php?act=view&id={$msg.message_id}">{$msg.title|truncate:60:"..."}</a></td>
+        <td>{$msg.user_name}</td>
+        <td>{$msg.send_date}</td>
+      </tr>
+    {/foreach}
+  </table>
+  </div>
+<br />
+{/if}
+<!-- end personal message -->
+
+<div class="list-div">
+	<div class="important">
+    	<ul>
+        	<li class="item01">
+            	<div class="con_box">
+                	<img src="images/tbxfs11.png" />
+                    <div class="h2pdw">
+                	<h2>今日销售总额</h2>
+                    <p><!--{if $today.formatted_money}-->{$today.formatted_money}<!--{else}-->0.00<!--{/if}--></p>
+                    </div>
+                </div>
+            </li>
+            <li class="item02">
+            	<div class="con_box">
+                	<img src="images/tbxfs9.png" />
+                    <div class="h2pdw">
+                	<h2>今日订单总数</h2>
+                    <p>{$today.order}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item03">
+            	<div class="con_box">
+                	<img src="images/tbxfs10.png" />
+                    <div class="h2pdw">
+                	<h2>今日注册会员</h2>
+                    <p>{$today.user}</p>
+                    </div>
+                </div>
+            </li>
+            <li class="item04">
+            	<div class="con_box">
+                	<img src="images/tbxfs8.png" />
+                    <div class="h2pdw">
+                	<h2>今日网站访问</h2>
+                    <p>{$today_visit}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+	<div class="console_detaile">
+    	<ul>
+        	<li class="item01">
+            <a href="order.php?act=list&composite_status={$status.unconfirmed}">
+            	<div class="con_box clearfix  bj1">
+                	<div class="img"><img src="images/llitg11.png" width="30" height="30" /></div>
+                    <div class="text"><h2>{$lang.unconfirmed}</h2><p>{$order.unconfirmed}</p></div>
+                 </div>
+            </a>
+            </li><li class="item02">
+            <a href="order.php?act=list&composite_status={$status.await_pay}">
+            	<div class="con_box clearfix bj2">
+                	<div class="img"><img src="images/llitg12.png" width="30" height="30" /></div>
+                	<div class="text"><h2>{$lang.await_pay}</h2><p>{$order.await_pay}</p></div>
+                </div>
+            </a>
+            </li><li class="item03">
+            <a href="order.php?act=list&composite_status={$status.await_ship}">
+            	<div class="con_box clearfix  bj3">
+                	<div class="img"><img src="images/llitg13.png" width="30" height="30" /></div>
+                	<div class="text"><h2>{$lang.await_ship}</h2><p>{$order.await_ship}</p></div>
+                </div>
+            </a>
+            </li><li class="item04">
+            <a href="order.php?act=list&composite_status={$status.finished}">
+            	<div class="con_box clearfix  bj4">
+                	<div class="img"><img src="images/llitg14.png" width="30" height="30" /></div>
+                	<div class="text"><h2>{$lang.finished}</h2><p>{$order.finished}</p></div>
+                </div>
+            </a>
+            </li><li class="item05">
+            <a href="goods_booking.php?act=list_all">
+            	<div class="con_box clearfix  bj5">
+                	<div class="img"><img src="images/llitg15.png" width="30" height="30" /></div>
+                	<div class="text clearfix"><h2>{$lang.new_booking}</h2><p>{$booking_goods}</p></div>
+                </div>
+            </a>
+            </li><li class="item07">
+            <a href="user_account.php?act=list&process_type=1&is_paid=0">
+            	<div class="con_box clearfix  bj6">
+                	<div class="img"><img src="images/llitg16.png" width="30" height="30" /></div>
+                	<div class="text"><h2><!--{$lang.new_reimburse} -->充值和提现申请</h2><p>{$new_repay}</p></div>
+                </div>
+            </a>
+            </li>
+        </ul>
+    </div>
+    <div style="clear:both"></div>
+</div>
+
+<div class="list-div">
+	<div class="order_count">
+        <p style="position:absolute; margin:-1px 0 0 0;"><span class="tab_front" style="font-size:20px;"><strong>{$thismonth}月订单统计</strong></span></p>
+        <div style='height:400px;' id='order_chart_div'></div>
+    </div>
+</div>
+<br />
+<div class="list-div">
+	<div class="order_count">
+        <p style="position:absolute; margin:-1px 0 0 0;"><span class="tab_front" style="font-size:20px;"><strong>{$thismonth}月销售额统计</strong></span></p>
+        <div style='height:400px;' id='sales_chart_div'></div>
+    </div>
+</div>
+</div>
+<br />
+
+{literal}
+{insert_scripts files="../js/echarts-all.js"}
+<script type="Text/Javascript" language="JavaScript">
+    var order_chart = echarts.init(document.getElementById('order_chart_div'));
+    order_chart.setOption({$orders_option});
+    var sales_chart = echarts.init(document.getElementById('sales_chart_div'));
+    sales_chart.setOption({$sales_option});
+</script>
+{insert_scripts files="../js/utils.js"}
+<script type="Text/Javascript" language="JavaScript">
+//$(".warning").html("库存警告")
+<!--
+onload = function()
+{
+  /* 检查订单 */
+  startCheckOrder();
+}
+//  Ajax.call('index.php?is_ajax=1&act=main_api','', start_api, 'GET', 'TEXT','FLASE');
+  //Ajax.call('cloud.php?is_ajax=1&act=cloud_remind','', cloud_api, 'GET', 'JSON');
+   function start_api(result)
+    {
+      apilist = document.getElementById("lilist").innerHTML;
+      document.getElementById("lilist").innerHTML =result+apilist;
+      if(document.getElementById("Marquee") != null)
+      {
+        var Mar = document.getElementById("Marquee");
+        lis = Mar.getElementsByTagName('div');
+        //alert(lis.length); //显示li元素的个数
+        if(lis.length>1)
+        {
+          api_styel();
+        }      
+      }
+    }
+ 
+      function api_styel()
+      {
+        if(document.getElementById("Marquee") != null)
+        {
+            var Mar = document.getElementById("Marquee");
+            if (Browser.isIE)
+            {
+              Mar.style.height = "52px";
+            }
+            else
+            {
+              Mar.style.height = "36px";
+            }
+            
+            var child_div=Mar.getElementsByTagName("div");
+
+        var picH = 16;//移动高度
+        var scrollstep=2;//移动步幅,越大越快
+        var scrolltime=30;//移动频度(毫秒)越大越慢
+        var stoptime=4000;//间断时间(毫秒)
+        var tmpH = 0;
+        
+        function start()
+        {
+          if(tmpH < picH)
+          {
+            tmpH += scrollstep;
+            if(tmpH > picH )tmpH = picH ;
+            Mar.scrollTop = tmpH;
+            setTimeout(start,scrolltime);
+          }
+          else
+          {
+            tmpH = 0;
+            Mar.appendChild(child_div[0]);
+            Mar.scrollTop = 0;
+            setTimeout(start,stoptime);
+          }
+        }
+        setTimeout(start,stoptime);
+        }
+      }
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}

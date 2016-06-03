@@ -1,0 +1,30 @@
+/* CSS Document */
+
+/*详情页1200样式*/
+.depict-name h3{ width:566px;}
+.detail-box1{ width:1198px;}
+.dmainBox{ width:1200px;}
+.detail-depict{ width:586px;}
+.depict-name .dName-Buy{ width:566px;}
+.detail-right{ width:990px;}
+.d-evaluate-r{ width:350px;}
+.u-reply-wrap{ width:865px;}
+.u-reply-list li .u-reply-item .u-reply-con{ width:750px;}
+.u-reply-input .rt textarea{ width:793px;}
+.u-comments-area{ width:674px;}
+.u-comments-f{ width:568px;}
+.detailSetEmble{ width:840px;}
+.float-detBox-title-box{ width:1200px;}
+.float-detBox-title-right{ width:990px;}
+.detailSetRight{ width:125px;}
+.u-notice-box ul{ width:580px;}
+.u-notice-box li{ padding:0 19px;}
+.pricing-con .pri-con-act{ width:500px;}
+.detailSetBtn-box{ margin:6px 0 0 223px;}
+.detail_sbban{width:1200px;}
+.dRight-parameter{ width:990px;}
+.dRight-parameter ul{ width:1000px;}
+.dRight-parameter li{ width:178px;}
+.buyNub-buy-wrap{ height:80px; padding:10px 0 10px 28px; *padding-top:0px;}
+.dLeft-weixin{ float:left; height:55px; padding:10px 0 5px 30px; cursor:pointer;  display:block;}
+.dLeft-weixin2{ float:left; height:90px; cursor:pointer; padding-left:20px; margin-left:30px;  display:block;}

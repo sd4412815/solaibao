@@ -1,0 +1,43 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<style>
+	.pingjia{font-size:22px;background:#e95466; position:relative; left:50%; margin-left:-54px; border-radius:4px; padding:6px 10px; border:none; color:#FFF; margin-bottom:5px;}
+</style>
+<div class="con">
+    <div style="height:4.3em;"></div>
+    <header>
+        <nav class="ect-nav ect-bg icon-write"> <!-- #BeginLibraryItem "/library/page_menu.lbi" --><!-- #EndLibraryItem --> </nav>
+    </header>
+<secsion>
+<div class="box">
+    <form id='comment_a' name="theForm" action="{:url('comment/insert_comment')}" method="post">
+    <div class="row" style="padding: 20px;">
+        <div class="col-xs-2">
+            <img style="width:100px;" src="{$path}/{$goods_info.goods_thumb}" alt="">
+        </div>
+        <div class="col-xs-10" style="text-align:center;">
+            <textarea name="content" style="border-style:none;background: url(\"{$path}\/{$goods_info.goods_thumb}\")" id="" cols="30" rows="10" placeholder="亲！赶快评价吧"></textarea>			<!--头标和尾标不能换行 -->
+        </div>
+
+    </div>
+  <!--  <div class="row" style="padding: 20px;">
+        <p>评分</p>
+        <div>
+            <input type="text" name="">
+        </div>
+    </div>-->
+    <div>
+        <input type="hidden" id="comment_c" name="goodsid" value="{$goods_info.goods_id}">
+        <input type="hidden" id="comment_d" name="orderid" value="{$order_id}">
+        <input class="pingjia" value="提交评价" type="submit">
+    </div>
+    </form>
+</div>
+</secsion>
+
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+    <script type="text/javascript">
+    </script>
+    </body>
+    </html>

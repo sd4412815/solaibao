@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="css/bootstrap_small.css" rel="stylesheet" type="text/css">
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+
+<!-- {if $cat_style} -->
+<link href="{$cat_style}" rel="stylesheet" type="text/css" />
+<!-- {/if} -->
+<style>
+  .backgroundimg{
+    background-image:url(images/bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+  }
+</style>
+	{insert_scripts files='region.js'}
+</head>
+<body>
+	<!-- #BeginLibraryItem "/library/page_header.lbi" -->
+	<!-- #EndLibraryItem -->
+    
+	   <div class="row backgroundimg">
+	       <div class="col-sm-offset-2 col-sm-8 col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6">
+	            <br />
+	            <h2 class="text-center"><strong style="color:#E95466">加盟申请表</strong></h2>
+	            <br />
+	            <form class="form-horizontal" id="form_company_info" method="post" action="apply.php" name="form_company_info">
+
+	                <div class="form-group">
+	                  <label class="col-sm-2 control-label">店名</label>
+
+	                  <div class="col-sm-8">
+	                    <input name="company_name" class="form-control" placeholder="请输入您店铺的名字" type="text">
+	                  </div>
+	                </div>
+	                
+	                <div class="form-group">
+	                  	<label class="col-sm-2 control-label">联系人</label>
+
+	                  	<div class="col-sm-8">
+	                    	<input name="contacts_name" class="form-control" placeholder="请输入您的姓名" type="text">
+	                  	</div>
+	                </div>
+
+					<div class="form-group">
+						<label class="col-sm-2 control-label">店面地址</label>
+
+						<div class="col-sm-8">
+							<div class="row">
+								<div class="col-sm-3">
+									<select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')" class="form-control">
+										<option value="0">请选择省份</option>
+										<!-- {foreach from=$province_list item=province} -->
+										<option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+										<!-- {/foreach} -->
+									</select>
+								</div>
+								<div class="col-sm-3">
+									<select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')" class="form-control">
+										<option>请选择城市</option>
+										<!-- {foreach from=$city_list.$sn item=city} -->
+										<option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+										<!-- {/foreach} -->
+									</select>
+								</div>
+								<div class="col-sm-3">
+									<select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if} class="form-control">
+										<option>请选择区域</option>
+										<!-- {foreach from=$district_list.$sn item=district} -->
+										<option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+										<!-- {/foreach} -->
+									</select>
+								</div>
+							</div>
+						</div>
+					</div>
+
+	                  <div class="form-group">
+	                     <label class="col-sm-2 control-label"></label>
+
+		                  <div class="col-sm-8">
+		                     <input name="address" class="form-control" placeholder="请输入详细地址" type="text">
+		                  </div>
+	                  </div>
+
+	                  <div class="form-group">
+	                     <label class="col-sm-2 control-label">联系电话</label>
+
+		                  <div class="col-sm-8">
+		                    <input name="tel" class="form-control" placeholder="请输入电话号码" type="text">
+		                  </div>
+	                  </div>
+	                
+	                <div class="form-group">
+	                  <label class="col-sm-2 control-label">短信验证码</label>
+
+	                  <div class="col-sm-4">
+	                    <input class="form-control" placeholder="验证码" type="text">
+	                  </div>
+	                  
+	                  <div class="col-sm-4">
+	                    <button class="btn btn-default" type="submit" style="background-color:#E95466;color:#fff">短信验证码</button>
+	                  </div>
+	                </div>
+	                                  
+	                <div class="form-group">
+	                   <div class="row">
+	                      <div class="col-sm-4 col-sm-offset-4">
+	                          <button class="btn btn-info" type="submit">提交申请</button>
+	                      </div>
+	                   </div>
+	                </div>
+
+	            </form>
+	          
+	     </div>
+	   </div>
+	
+    
+
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" -->
+    <!-- #EndLibraryItem -->
+</body>
+</html>
+
+<script>
+$(".form-group").children().css("float","left")
+
+/*	$(document).ready(function(){
+
+		$("#province").on("change", function(){
+			var province = $('#province option:selected').val();
+			console.log(province);
+			update_data(3,0);
+		});
+	});
+
+	function update_data(type,parent){
+		Ajax.call('region.php?type=' + type +'&parent=' + parent , data_callback, "GET", "JSON");
+	}
+
+	function data_callback(result){
+		console.log(result);
+	}*/
+
+</script>

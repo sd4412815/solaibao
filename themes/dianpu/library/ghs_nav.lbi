@@ -1,0 +1,66 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+     
+		.cur{
+			background-color:#e95466;
+			}
+    </style>
+    <script tyckpe="text/javascript">
+       
+         $(function(){
+           var m = location.href;
+           var node = document.getElementsByName("a_nav");
+           for(var i=0;i<node.length;i++){
+             if(node[i].href == m){
+                node[i].style.background = "#e95466";
+             }
+           }
+         });
+
+        //初始化主菜单
+        function sw_nav2(obj,tag)
+        {
+            var DisSub2 = document.getElementById("DisSub2_"+obj);
+            var HandleLI2= document.getElementById("HandleLI2_"+obj);
+            if(tag==1)
+            {
+                DisSub2.style.display = "block";
+                HandleLI2.className="current";
+                if(DisSub2.style.height < 30){
+                    DisSub2.style.height = '260px';
+                }
+            }
+            else
+            {
+                DisSub2.style.display = "none";
+                HandleLI2.className="";
+            }
+        }
+    </script>
+    <div class="ghs_body"> 
+    <div style="width:1210px;margin:0 auto;height:0px; line-height:0px; clear:both;position:relative;">       
+    </div>
+    <div class="ghs_title" style="background: #0F0F0F; ">
+         <div class="ghs_content">   
+           <div id="nav_bg" class="fl" style="width:840px;">
+       <!-- {foreach from=$goods_list item=goods} -->
+       <!-- {/foreach} -->
+               <!--  <a href="supplier.php?go=whole&suppId={$smarty.session.suppId}&id=70000" class="cur" style="background-color:#e95466;padding:0px 75px;">所有商品分类
+                </a> -->
+                <a href="supplier.php?suppId={$smarty.get.suppId}" style="margin-left:240px;" name="a_nav">店铺首页</a>
+                 <!--{foreach from=$navigator_list_supplier.middle item=mall_get_navigator}-->
+                    <a title="{$mall_get_navigator.name|escape:html}" style="color:#fff;" href="{$mall_get_navigator.url}" name="a_nav"
+                       {if $mall_get_navigator.opennew}target="_blank" 
+                       {/if}>{$mall_get_navigator.name|escape:html}
+                    </a>
+                <!--{/foreach}-->
+            </div>            
+         </div>
+    </div>
+</div>
+
+<script>
+ 
+
+
+</script>

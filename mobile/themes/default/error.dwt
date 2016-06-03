@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>solaibao错误日志</title>
+    <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+    <style>
+        li{
+            margin-bottom: 2px;
+            background: #abcdef;
+            height: 50px;
+            width: 50px;
+            text-align:center;
+            line-height: 50px;
+            color:#fff;
+            cursor: pointer ;;
+        }
+        ul a{
+            color:#fff;
+        }
+        a:hover{
+            color: red;
+        }
+
+    </style>
+</head>
+<body style="background: #F7F7F7;">
+<!--{if $now_error.0 neq ''}-->
+    <p class="h4  text-center" style="color: #f00;"><b>正在修改</b></p>
+    <table class="table table-striped table-hover" style="width: 80%;margin: 0 auto;">
+        <tr>
+            <th>标题</th>
+            <th>修改时间</th>
+            <th>来源</th>
+            <th>操作人</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        <!--{foreach from=$now_error item=now_error}-->
+        <tr>
+            <td ><a href="index.php?m=default&c=error&a=info&id={$now_error.id}" id="title{$now_error.id}">{$now_error.title}</a></td>
+            <td>{$now_error.last_time}</td>
+            <td>{$now_error.froms}</td>
+            <td>{$now_error.user}</td>
+            <td>{if $now_error.status==2}修改中...{/if}</td>
+            <!--<td><a href="{:url('error/edit',array('id'=>$now_error.id))}"><i class="glyphicon glyphicon-pencil"></i></a></td>-->
+            <!--<td><i class="glyphicon glyphicon-trash"></i></td>-->
+            <td><a href="" onclick="done({$now_error.id})"><i class=" glyphicon glyphicon-ok"></i></a></td>
+        </tr>
+        <!--{/foreach}-->
+    </table>
+<!--{/if}-->
+<!--{if $not_error.0 neq ''}-->
+<p class="hr"></p><br/>
+    <p class="h4  text-center" style="color: #999;"><b>未修改</b></p>
+    <table class="table table-striped table-hover table-condensed" style="width: 80%;margin: 0 auto;">
+        <tr>
+            <th>标题</th>
+            <th>修改时间</th>
+            <th>来源</th>
+            <th>操作人</th>
+            <th>状态</th>
+            <th colspan="2">操作</th>
+        </tr>
+        <!--{foreach from=$not_error item=not_error}-->
+        <tr>
+            <td ><a href="index.php?m=default&c=error&a=info&id={$not_error.id}" id="title{$not_error.id}">{$not_error.title}</a></td>
+            <td>{$not_error.last_time}</td>
+            <td>{$not_error.froms}</td>
+            <td>
+                <select name="" id="user{$not_error.id}">
+                    <option value="0">---</option>
+                    <!--{foreach from=$users item=user}-->
+                    <option value="{$user.id}">{$user.name}</option>
+                    <!--{/foreach}-->
+                </select>
+            </td>
+            <td>未修改</td>
+            <!--<td><a href="{:url('error/edit',array('id'=>$not_error.id))}"><i class="glyphicon glyphicon-pencil"></i></a></td>-->
+            <td><a href="" onclick="del({$not_error.id})"><i class="glyphicon glyphicon-trash"></i></a></td>
+            <td><a href="" onclick="edit({$not_error.id})"><i class=" glyphicon glyphicon-ok"></i></a></td>
+        </tr>
+        <!--{/foreach}-->
+    </table>
+<!--{/if}-->
+<p class="hr"></p><br/>
+    <!--{if $error.0 neq ''}-->
+    <p class="h4  text-center" style="color: #1dc116;"><b>已完成</b></p>
+    <table class="table table-striped table-hover" style="width: 80%;margin: 0 auto;">
+        <tr>
+            <th>标题</th>
+            <th>修改时间</th>
+            <th>来源</th>
+            <th>操作人</th>
+            <th>状态</th>
+        </tr>
+        <!--{foreach from=$error item=error}-->
+        <tr>
+            <td>{$error.title}</td>
+            <td>{$error.last_time}</td>
+            <td>{$error.froms}</td>
+            <td>{$error.user}</td>
+            <td>{if $error.status==8}已完成{/if}</td>
+        </tr>
+        <!--{/foreach}-->
+    </table>
+<!--{/if}-->
+<ul class="list-unstyled" style="position: fixed;top:100px;right:10px;">
+    <a href="{:url('error/add')}"><li><i style="font-size: 20px;" class="glyphicon glyphicon-plus"></i></li></a>
+    <li>asdasd</li>
+    <li>asdasd</li>
+</ul>
+</body>
+</html>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js" ></script>
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+    function del(id){
+        if(confirm('确定要删除吗？')){
+            $.ajax({
+                url: "{:url('error/del')}",
+                data:{id:id},
+                type: "POST",
+                dataType:'json',
+                async:false,
+                success:function(data){
+                    console.log(data);
+                },
+            });
+        }
+    }
+
+    function ck_del(data){
+        console.log(data);
+    }
+
+    function edit(id){
+        var title=$('#title'+id).html();
+        var user=$('#user'+id).val();
+
+        if(user==0){
+            alert('请选择正确的操作人');
+        }else{
+            if (confirm('是否要修改：'+title+'  ？')){
+                $.ajax({
+                    url: "{:url('error/update')}",
+                    data:{id:id,status:2,user:user},
+                    type: "POST",
+                    dataType:'json',
+                    async:false,
+                    success:function(data){
+                        console.log(data);
+                    },
+                });
+            }
+        }
+    }
+
+    function done(id){
+        var title=$('#title'+id).html();
+        if(confirm('确定完成  ' +title+ '  了吗？')){
+            $.ajax({
+                url: "{:url('error/update')}",
+                data:{id:id,status:8},
+                type: "POST",
+                dataType:'json',
+                async:false,
+                success:function(data){
+                    console.log(data);
+                },
+            });
+        }
+    }
+
+//    window.location.reload()
+
+
+    var time = 60000;
+    var interval; //调度器对象。
+    $(document).ready(function(){
+        interval = setInterval(fun,time);
+    })
+    function fun(){
+        window.location.reload()
+    }
+
+</script>
